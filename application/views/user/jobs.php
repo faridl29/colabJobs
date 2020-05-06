@@ -47,54 +47,12 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12">
-                                        <div class="single_field">
-                                            <select class="wide">
-                                                <option data-display="Experience">Experience</option>
-                                                <option value="1">Experience 1</option>
-                                                <option value="2">Experience 2 </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="single_field">
-                                            <select class="wide">
-                                                <option data-display="Job type">Job type</option>
-                                                <option value="1">full time 1</option>
-                                                <option value="2">part time 2 </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="single_field">
-                                            <select class="wide">
-                                                <option data-display="Qualification">Qualification</option>
-                                                <option value="1">Qualification 1</option>
-                                                <option value="2">Qualification 2</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="single_field">
-                                            <select class="wide">
-                                                <option data-display="Gender">Gender</option>
-                                                <option value="1">male</option>
-                                                <option value="2">female</option>
-                                            </select>
-                                        </div>
-                                    </div>
                                 </div>
                             </form>
                         </div>
-                        <div class="range_wrap">
-                            <label for="amount">Price range:</label>
-                            <div id="slider-range"></div>
-                            <p>
-                                <input type="text" id="amount" readonly style="border:0; color:#7A838B; font-size: 14px; font-weight:400;">
-                            </p>
-                        </div>
+                       
                         <div class="reset_btn">
-                            <button  class="boxed-btn3 w-100" type="submit">Reset</button>
+                            <button  class="boxed-btn3 w-100" type="submit">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -133,7 +91,7 @@
                                                 <a href="#"><h4><?php echo $row->judul;?></h4></a>
                                                 <div class="links_locat d-flex align-items-center">
                                                     <div class="location">
-                                                        <h5><?php echo $row->nama_usaha;?></h5>
+                                                        <p><?php echo $row->nama_perusahaan;?></p>
                                                     </div>
                                                     <div class="location">
                                                         <p> <i class="fa fa-map-marker"></i> <?php echo $row->domisili;?></p>
@@ -144,7 +102,7 @@
                                         <div class="jobs_right">
                                             <div class="apply_now">
                                                 <a class="heart_mark" href="<?php echo base_url();?>assets/jobboard2/#"> <i class="fa fa-heart"></i> </a>
-                                                <a href="<?php echo base_url();?>assets/jobboard2/job_details.html" class="boxed-btn3">Apply Now</a>
+                                                <a onclick="location.href='<?php echo base_url('user/job_detail/detail/'); echo $row->id_jobs;?>';" class="boxed-btn3">Apply Now</a>
                                             </div>
                                             <div class="date">
                                                 <p>Date line: <?php echo $row->dateline;?></p>

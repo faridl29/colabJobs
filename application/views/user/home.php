@@ -92,49 +92,49 @@
             <div class="row">
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="single_catagory">
-                        <a href="<?php echo base_url();?>assets/jobboard2/jobs.html"><h4>Design & Creative</h4></a>
+                        <a href="#" onclick="get_with_category('Design & Creative')"><h4>Design & Creative</h4></a>
                         <p> <span>50</span> Available position</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="single_catagory">
-                        <a href="<?php echo base_url();?>assets/jobboard2/jobs.html"><h4>Marketing</h4></a>
+                        <a href="#" onclick="get_with_category('Marketing')"><h4>Marketing</h4></a>
                         <p> <span>50</span> Available position</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="single_catagory">
-                        <a href="<?php echo base_url();?>assets/jobboard2/jobs.html"><h4>Telemarketing</h4></a>
+                        <a href="#" onclick="get_with_category('Telemarketing')"><h4>Telemarketing</h4></a>
                         <p> <span>50</span> Available position</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="single_catagory">
-                        <a href="<?php echo base_url();?>assets/jobboard2/jobs.html"><h4>Software & Web</h4></a>
+                        <a href="#" onclick="get_with_category('Software & Web')"><h4>Software & Web</h4></a>
                         <p> <span>50</span> Available position</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="single_catagory">
-                        <a href="<?php echo base_url();?>assets/jobboard2/jobs.html"><h4>Administration</h4></a>
+                        <a href="#" onclick="get_with_category('Administration')"><h4>Administration</h4></a>
                         <p> <span>50</span> Available position</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="single_catagory">
-                        <a href="<?php echo base_url();?>assets/jobboard2/jobs.html"><h4>Teaching & Education</h4></a>
+                        <a href="#" onclick="get_with_category('Teaching & Education')"><h4>Teaching & Education</h4></a>
                         <p> <span>50</span> Available position</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="single_catagory">
-                        <a href="<?php echo base_url();?>assets/jobboard2/jobs.html"><h4>Engineering</h4></a>
+                        <a href="#" onclick="get_with_category('Engineering')"><h4>Engineering</h4></a>
                         <p> <span>50</span> Available position</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="single_catagory">
-                        <a href="<?php echo base_url();?>assets/jobboard2/jobs.html"><h4>Garments / Textile</h4></a>
+                        <a href="#" onclick="get_with_category('Garments / Textile')"><h4>Garments / Textile</h4></a>
                         <p> <span>50</span> Available position</p>
                     </div>
                 </div>
@@ -392,6 +392,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
     <script src="<?php echo base_url();?>assets/jobboard2/js/main.js"></script>
-</body>
 
+    <script type="text/javascript">
+
+    function get_with_category(category){
+        window.location.href = "<?php echo base_url('user/jobs/get_job_with_category')?>/"+category;
+    }
+    
+    </script>
+
+</body>
 </html>

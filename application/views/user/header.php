@@ -1,9 +1,7 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
+<html lang="id">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Job Board</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,14 +23,11 @@
     <link rel="stylesheet" href="<?php echo base_url();?>assets/jobboard2/css/slicknav.css">
 
     <link rel="stylesheet" href="<?php echo base_url();?>assets/jobboard2/css/style.css">
-    <!-- <link rel="stylesheet" href="<?php echo base_url();?>assets/jobboard2/css/responsive.css"> -->
+    
 </head>
 
 <body>
-    <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="<?php echo base_url();?>assets/jobboard2/https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-
+    
     <!-- header-start -->
     <header>
         <div class="header-area ">
@@ -51,8 +46,8 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="<?php echo base_url();?>home">home</a></li>
-                                            <li><a href="<?php echo base_url();?>jobs">Browse Job</a></li>
+                                            <li><a href="<?php echo base_url();?>user/home">home</a></li>
+                                            <li><a href="<?php echo base_url();?>user/jobs">Browse Job</a></li>
                                             <li><a href="<?php echo base_url();?>assets/jobboard2/#">Q&A </a></li>
                                         </ul>
                                     </nav>
@@ -60,11 +55,8 @@
                             </div>
                             <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                                 <div class="Appointment">
-                                    <div class="phone_num d-none d-xl-block">
-                                        <a href="<?php echo base_url();?>assets/jobboard2/#">Log in</a>
-                                    </div>
                                     <div class="d-none d-lg-block">
-                                        <a class="boxed-btn3" href="<?php echo base_url();?>assets/jobboard2/#">Post a Job</a>
+                                        <a class="boxed-btn3" href="<?php echo base_url();?>admin/profile">Account</a>
                                     </div>
                                 </div>
                             </div>
