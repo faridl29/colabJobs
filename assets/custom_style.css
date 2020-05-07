@@ -87,3 +87,4 @@
 .custom-file-input.is-invalid:focus~.custom-file-label,.was-validated .custom-file-input:invalid:focus~.custom-file-label {
     box-shadow: 0 0 0 .2rem rgba(220,53,69,.25);
 }
+

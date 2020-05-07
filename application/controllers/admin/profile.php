@@ -9,6 +9,10 @@ class Profile extends CI_Controller {
 		$this->load->helper(array('form','file'));
 		$this->load->library(array('session','form_validation','upload'));
 		$this->load->model("User_model");
+
+		if($this->session->userdata('status') != "login"){
+			redirect(base_url("login"));
+		}
     }
 
 	public function index()

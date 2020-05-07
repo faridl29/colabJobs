@@ -36,11 +36,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="jobs_right">
-                                <div class="apply_now">
-                                    <a class="heart_mark" href="#"> <i class="ti-heart"></i> </a>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="descript_wrap white-bg">
@@ -109,7 +105,7 @@
                             <ul>
                                 <li>Published on: <span><?php echo $result["published"];?></span></li>
                                 <li>Date line: <span><?php echo $result["dateline"];?></span></li>
-                                <li>Owner: 
+                                <li>Publisher: <span><?php echo $result["nama"];?></span></li>
                                 <li>Location: <span><?php echo $result["domisili"];?></span></li>
                                 <li>Bussiness Catogory: <span> <?php echo $result["jenis_usaha"];?></span></li>
                             </ul>

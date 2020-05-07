@@ -12,6 +12,9 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
+        if($this->session->userdata('status') == "login"){
+			redirect(base_url("user/home"));
+		}
 		
         $data['note'] = "";
 		$data['message'] = "";
@@ -56,6 +59,11 @@ class Login extends CI_Controller {
 			echo "Isi semua kolom !";
         }
         
+    }
+
+    public function logout(){   
+        $this->session->sess_destroy();
+        redirect(base_url('login'));
     }
 
 }

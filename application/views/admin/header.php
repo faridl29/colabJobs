@@ -10,6 +10,11 @@
 	<link href="<?php echo base_url();?>assets/LuminoAdmin/css/styles.css" rel="stylesheet">
 	<link href="<?php echo base_url();?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet">
 	<link href="<?php echo base_url();?>assets/custom_style.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/jobboard2/css/style.css">
+	<!-- <link href="<?php echo base_url();?>assets/jobboard2/css/bootstrap.min.css" rel="stylesheet"> -->
+	
+	
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -26,7 +31,7 @@
 				<ul class="nav navbar-top-links navbar-right">
 
 					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="<?php echo base_url();?>assets/LuminoAdmin/#">
-						<em class="fa fa-bell"></em><span class="label label-info">5</span>
+						<em class="fa fa-bell"></em><span class="label label-danger">5</span>
 					</a>
 						<ul class="dropdown-menu dropdown-alerts">
 							<li><a href="<?php echo base_url();?>assets/LuminoAdmin/#">
@@ -64,7 +69,7 @@
 		<ul class="nav menu">
 			<li class="active"><a href="<?php echo base_url();?>admin/profile"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 			<li><a href="<?php echo base_url();?>admin/post_job"><em class="fa fa-calendar">&nbsp;</em> Post Job</a></li>
-			<li><a href="<?php echo base_url();?>assets/LuminoAdmin/charts.html"><em class="fa fa-bar-chart">&nbsp;</em> Charts</a></li>
+			<li><a href="<?php echo base_url();?>admin/history"><em class="fa fa-bar-chart">&nbsp;</em> History</a></li>
 			<li><a href="<?php echo base_url();?>assets/LuminoAdmin/elements.html"><em class="fa fa-toggle-off">&nbsp;</em> UI Elements</a></li>
 			<li><a href="<?php echo base_url();?>assets/LuminoAdmin/panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
 			<li class="parent "><a data-toggle="collapse" href="<?php echo base_url();?>assets/LuminoAdmin/#sub-item-1">
@@ -82,7 +87,7 @@
 					</a></li>
 				</ul>
 			</li>
-			<li><a href="<?php echo base_url();?>assets/LuminoAdmin/login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+			<li><a href="<?php echo base_url();?>login/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
 	</div><!--/.sidebar-->
 		

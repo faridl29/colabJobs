@@ -8,6 +8,10 @@ class Job_detail extends CI_Controller {
 		parent::__construct();
 		$this->load->library('session');
 		$this->load->model('Jobs_model');
+
+		if($this->session->userdata('status') != "login"){
+			redirect(base_url("login"));
+		}
     }
 
 	public function detail($id_jobs)

@@ -34,7 +34,7 @@
 									<span class="invalid-feedback"></span>
 								</div>
 								<div class="col-md-4">
-									<a onclick="upload()" type="submit" class="btn btn-primary float-right" style="width:100px;height:40px" ><b>Upload</b></a>
+									<a onclick="upload()" type="submit" class="btn btn-primary float-right" style="width:100px;height:40px"> Upload </a>
 								</div>
 							</div>
 						</div>

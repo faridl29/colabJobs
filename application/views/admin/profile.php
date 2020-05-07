@@ -54,7 +54,7 @@
 		
 		<div class="row">
 			<div class="col-md-12">
-				<div class="panel panel-default">
+				<div class="panel panel-primary">
 						<div class="panel-heading">
 							Profile
 							<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span>
@@ -113,22 +113,6 @@
 						</div>
 					</div><!-- /.panel-->
 
-				</div>
-			</div>
-
-			<div class="row">
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						Profile
-						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span>
-					</div>
-					<div class="panel-body pad">
-					<form>
-						<textarea class="textarea" placeholder="Place some text here"
-								style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-					</form>
-					</div>
 				</div>
 			</div>
 

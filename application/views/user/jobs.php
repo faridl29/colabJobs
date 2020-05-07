@@ -101,7 +101,6 @@
                                         </div>
                                         <div class="jobs_right">
                                             <div class="apply_now">
-                                                <a class="heart_mark" href="<?php echo base_url();?>assets/jobboard2/#"> <i class="fa fa-heart"></i> </a>
                                                 <a onclick="location.href='<?php echo base_url('user/job_detail/detail/'); echo $row->id_jobs;?>';" class="boxed-btn3">Apply Now</a>
                                             </div>
                                             <div class="date">
