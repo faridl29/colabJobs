@@ -118,7 +118,7 @@
 	$('.textarea').wysihtml5()
  
 	var url = window.location;
-	var anchors = $('.sidebar-menu a');
+	var anchors = $('.nav a');
 
 	function upload(){
 	
@@ -172,6 +172,8 @@
 		$('#images').val('');
 	
 	}
+
+	anchors.parent('li').removeClass('active');
 
 	anchors.filter(function() {
 		return this.href == url;

@@ -84,7 +84,7 @@
 									</div>
 									<!-- Form actions -->
 									<div class="form-group">
-										<a onclick="edit_profile()" class="btn btn-primary btn-block"><i class="fa fa-edit"></i><b> Edit Profile</b></a>
+										<a onclick="edit_profile()" class="btn btn-primary btn-block"><i class="fa fa-edit"></i> Edit Profile</a>
 									</div>
 								
 								</form>
@@ -105,7 +105,7 @@
 									</div>
 									<!-- Form actions -->
 									<div class="form-group">
-										<a onclick="change_password()" class="btn btn-primary btn-block"><i class="fa fa-edit"></i><b> Change Password</b></a>
+										<a onclick="change_password()" class="btn btn-primary btn-block"><i class="fa fa-edit"></i> Change Password</a>
 									</div>
 								
 								</form>
@@ -139,7 +139,7 @@
 	$('.textarea').wysihtml5()
  
 	var url = window.location;
-	var anchors = $('.sidebar-menu a');
+	var anchors = $('.nav a');
 
 	function edit_profile(){
 	
@@ -193,6 +193,8 @@
 		$('#images').val('');
 	
 	}
+
+	anchors.parent('li').removeClass('active');
 
 	anchors.filter(function() {
 		return this.href == url;

@@ -21,7 +21,7 @@
 									<img src="<?php echo base_url();?>assets/jobboard2/img/svg_icon/1.svg" alt="">
 								</div>
 								<div class="jobs_conetent">
-									<a href="#"><h4><?php echo $row->judul;?></h4></a>
+									<h4><?php echo $row->judul;?></h4>
 									<div class="links_locat d-flex align-items-center" style="display: -webkit-box!important;display: -ms-flexbox!important;display: flex!important">
 										<div class="location">
 											<p><?php echo $row->nama_perusahaan;?></p>
@@ -37,7 +37,8 @@
 									<a onclick="location.href='<?php echo base_url('user/job_detail/detail/'); echo $row->id_jobs;?>';" class="boxed-btn3" style="width:120px">Detail</a>
 								</div>
 								<div class="date">
-									<p>Date line: <?php echo $row->dateline;?></p>
+									<?php get_instance()->load->helper('tgl_indo');?>
+									<p>Date line: <?php echo date_indo($row->dateline);?></p>
 								</div>
 							</div>
 						</div>
@@ -75,7 +76,7 @@
 	$('.textarea').wysihtml5()
  
 	var url = window.location;
-	var anchors = $('.sidebar-menu a');
+	var anchors = $('.nav a');
 
 	function upload(){
 	
@@ -129,6 +130,8 @@
 		$('#images').val('');
 	
 	}
+
+	anchors.parent('li').removeClass('active');
 
 	anchors.filter(function() {
 		return this.href == url;

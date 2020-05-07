@@ -88,7 +88,7 @@
                                                 <img src="<?php echo base_url();?>images/<?php echo $row->photo;?>"alt="" style="width:100%">
                                             </div>
                                             <div class="jobs_conetent">
-                                                <a href="#"><h4><?php echo $row->judul;?></h4></a>
+                                                <a href="#" onclick="location.href='<?php echo base_url('user/job_detail/detail/'); echo $row->id_jobs;?>';"><h4><?php echo $row->judul;?></h4></a>
                                                 <div class="links_locat d-flex align-items-center">
                                                     <div class="location">
                                                         <p><?php echo $row->nama_perusahaan;?></p>
@@ -104,7 +104,8 @@
                                                 <a onclick="location.href='<?php echo base_url('user/job_detail/detail/'); echo $row->id_jobs;?>';" class="boxed-btn3">Apply Now</a>
                                             </div>
                                             <div class="date">
-                                                <p>Date line: <?php echo $row->dateline;?></p>
+                                            <?php get_instance()->load->helper('tgl_indo');?>
+                                                <p>Date line: <?php echo date_indo($row->dateline);?></p>
                                             </div>
                                         </div>
                                     </div>

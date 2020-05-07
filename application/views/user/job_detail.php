@@ -89,8 +89,9 @@
                         </div>
                         <div class="job_content">
                             <ul>
-                                <li>Published on: <span><?php echo $result["published"];?></span></li>
-                                <li>Date line: <span><?php echo $result["dateline"];?></span></li>
+                                <?php get_instance()->load->helper('tgl_indo');?>
+                                <li>Published on: <span><?php echo date_indo($result["published"]);?></span></li>
+                                <li>Date line: <span><?php echo date_indo($result["dateline"]);?></span></li>
                                 <li>Publisher: <span><?php echo $result["nama"];?></span></li>
                                 <li>Location: <span><?php echo $result["domisili"];?></span></li>
                                 <li>Bussiness Catogory: <span> <?php echo $result["jenis_usaha"];?></span></li>
