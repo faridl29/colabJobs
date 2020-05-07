@@ -41,7 +41,7 @@
 						<div class="row">
 							<hr>
 							<div class="col-md-8">
-								<textarea name="deskripsi" class="textarea" placeholder="Description..." style="width: 100%; height: 500px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+								<textarea name="deskripsi" class="textarea" placeholder="Description..." style="width: 100%; height: 700px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
 								<span class="invalid-feedback"></span>
 							</div>
 							<div class="col-md-4">
@@ -79,6 +79,13 @@
 								<label>Photo</label>
 								<input name="images" id="images" class="form-control" type="file" accept="image/png,image/gif,image/jpeg, image/jpg">
 								<span class="invalid-feedback"></span>
+							</div>
+							<div class="panel panel-default">
+								<label>Dateline</label>
+									
+								<div class="panel-body">
+									<div id="calendar" name="calendar"></div>
+								</div>
 							</div>
 							</div>
 						</div>
@@ -129,7 +136,7 @@
 				{
 				Swal({
 					title: 'Success',
-					text: 'Profile berhasil diubah!',
+					text: 'Berhasil memposting data!',
 					type: 'success'
 				});
 				}
@@ -147,7 +154,7 @@
 			},
 			error: function (jqXHR, textStatus, errorThrown)
 			{
-				alert('Error editing data');
+				alert('Error adding data');
 			}
 		});
 		

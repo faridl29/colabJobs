@@ -6,7 +6,8 @@ class Jobs extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->library(array('session','pagination'));
+        $this->load->library(array('session','pagination','form_validation'));
+        $this->load->helper(array('form','file'));
         $this->load->model('Jobs_model');
 
 		if($this->session->userdata('status') != "login"){
@@ -93,4 +94,51 @@ class Jobs extends CI_Controller {
 		
 		$this->load->view('user/jobs', $data);
     }
+
+    public function apply($id_jobs){
+
+		$data = array();
+		$data['status'] = TRUE;
+
+		$this->_validate();
+
+        if ($this->form_validation->run() == FALSE )
+        {
+            $errors = array(
+                'nama' 			    => form_error('nama'),
+				'email' 			=> form_error('email'),
+				'cover_letter'      => form_error('cover_letter'),
+			);
+            $data = array(
+                'status' 		=> FALSE,
+				'errors' 		=> $errors
+            );
+            $this->output->set_content_type('application/json')->set_output(json_encode($data));
+        }else{
+			
+            $insert = array(
+                'id_user'       => $this->session->userdata("id_user"),
+                'id_jobs'		=> $id_jobs,
+                'nama' 	        => $this->input->post('nama'),
+                'email' 	    => $this->input->post('email'),
+                'cover_letter' 	=> $this->input->post('cover_letter')
+            );
+        
+            $this->Jobs_model->request_colaborate($insert);
+
+            $data['status'] = TRUE;
+            $this->output->set_content_type('application/json')->set_output(json_encode($data));
+			
+
+		}
+	}
+
+	private function _validate()
+	{
+		$this->form_validation->set_error_delimiters('', '');
+        $this->form_validation->set_rules('nama', 'Nama', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required');
+		$this->form_validation->set_rules('cover_letter', 'Cover Letter', 'required');
+		
+	}
 }

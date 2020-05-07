@@ -10,14 +10,14 @@ class User_model extends CI_Model {
 		$this->load->database();
 	}
 
-	public function simpanUser($nama, $email, $password, $telepon) {
+	public function simpanUser($nama, $email, $password, $telepon, $photo) {
         $uuid = uniqid('', true);
         $hash = $this->hashSSHA($password);
         $encrypted_password = $hash["encrypted"]; // encrypted password
         $salt = $hash["salt"]; // salt
  
-        $sql = "INSERT INTO user(id_user, nama, email, telepon, password, salt) VALUES(?, ?, ?, ?, ?, ?)";
-        $stmt = $this->db->query($sql,array($uuid, $nama, $email, $telepon, $encrypted_password, $salt));
+        $sql = "INSERT INTO user(id_user, nama, email, telepon, foto, password, salt) VALUES(?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $this->db->query($sql,array($uuid, $nama, $email, $telepon, $photo, $encrypted_password, $salt));
 
 
         // cek jika sudah sukses

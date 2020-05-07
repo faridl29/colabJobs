@@ -21,8 +21,8 @@
                     <div class="job_details_header">
                         <div class="single_jobs white-bg d-flex justify-content-between">
                             <div class="jobs_left d-flex align-items-center">
-                                <div class="thumb">
-                                    <img src="<?php echo base_url();?>assets/jobboard2/img/svg_icon/1.svg" alt="">
+                                <div class="thumb" style="width:100px;height:100px">
+                                    <img src="<?php echo base_url();?>images/<?php echo $result["photo"];?>"alt="" style="width:100%">
                                 </div>
                                 <div class="jobs_conetent">
                                     <a href="#"><h4><?php echo $result["judul"];?></h4></a>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="descript_wrap white-bg">
-                        <div class="single_wrap">
+                        <div class="single_wrap" style="word-wrap: break-word;">
                             <h4>Job description</h4>
                             <p><?php echo $result["deskripsi"];?></p>
                         </div>
@@ -52,44 +52,30 @@
                       
                     </div>
                     <div class="apply_job_form white-bg">
-                        <h4>Apply for the job</h4>
-                        <form action="#">
+                        <h4>Apply for the colaborating job</h4>
+                        <form action="#" id="form" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="input_field">
-                                        <input type="text" placeholder="Your name">
+                                        <input class="form-control" type="text" placeholder="Your name" name="nama">
+                                        <span class="invalid-feedback"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="input_field">
-                                        <input type="text" placeholder="Email">
+                                        <input  class="form-control" type="email" placeholder="Email" name="email">
+                                        <span class="invalid-feedback"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="input_field">
-                                        <input type="text" placeholder="Website/Portfolio link">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                          <button type="button" id="inputGroupFileAddon03"><i class="fa fa-cloud-upload" aria-hidden="true"></i>
-                                          </button>
-                                        </div>
-                                        <div class="custom-file">
-                                          <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
-                                          <label class="custom-file-label" for="inputGroupFile03">Upload CV</label>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="input_field">
-                                        <textarea name="#" id="" cols="30" rows="10" placeholder="Coverletter"></textarea>
+                                        <textarea  class="form-control" name="cover_letter" id="" cols="30" rows="10" placeholder="Coverletter"></textarea>
+                                        <span class="invalid-feedback"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="submit_btn">
-                                        <button class="boxed-btn3 w-100" type="submit">Apply Now</button>
+                                    <a onclick="apply(<?php echo $result['id_jobs'];?>)" type="submit" class="boxed-btn3 w-100"> Apply Now </a>
                                     </div>
                                 </div>
                             </div>
@@ -118,100 +104,17 @@
     </div>
 
     <!-- footer start -->
+    <!-- footer start -->
     <footer class="footer">
-        <div class="footer_top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                            <div class="footer_logo">
-                                <a href="#">
-                                    <img src="<?php echo base_url();?>assets/jobboard2/img/logo.png" alt="">
-                                </a>
-                            </div>
-                            <p>
-                                finloan@support.com <br>
-                                +10 873 672 6782 <br>
-                                600/D, Green road, NewYork
-                            </p>
-                            <div class="socail_links">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-facebook"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget wow fadeInUp" data-wow-duration="1.1s" data-wow-delay=".4s">
-                            <h3 class="footer_title">
-                                Company
-                            </h3>
-                            <ul>
-                                <li><a href="#">About </a></li>
-                                <li><a href="#"> Pricing</a></li>
-                                <li><a href="#">Carrier Tips</a></li>
-                                <li><a href="#">FAQ</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".5s">
-                            <h3 class="footer_title">
-                                Category
-                            </h3>
-                            <ul>
-                                <li><a href="#">Design & Art</a></li>
-                                <li><a href="#">Engineering</a></li>
-                                <li><a href="#">Sales & Marketing</a></li>
-                                <li><a href="#">Finance</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6 col-lg-4">
-                        <div class="footer_widget wow fadeInUp" data-wow-duration="1.3s" data-wow-delay=".6s">
-                            <h3 class="footer_title">
-                                Subscribe
-                            </h3>
-                            <form action="#" class="newsletter_form">
-                                <input type="text" placeholder="Enter your mail">
-                                <button type="submit">Subscribe</button>
-                            </form>
-                            <p class="newsletter_text">Esteem spirit temper too say adieus who direct esteem esteems
-                                luckily.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    
         <div class="copy-right_text wow fadeInUp" data-wow-duration="1.4s" data-wow-delay=".3s">
             <div class="container">
                 <div class="footer_border"></div>
                 <div class="row">
                     <div class="col-xl-12">
-                        <p class="copy_right text-center">
+                        <p class="copy_right text-center" style="margin-bottom:-20px; margin-top:10px">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+ All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="<?php echo base_url();?>assets/jobboard2/https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
@@ -253,6 +156,63 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
     <script src="<?php echo base_url();?>assets/jobboard2/js/main.js"></script>
+
+    <script type="text/javascript">
+
+	function apply(id_jobs){
+	
+		$.ajax({
+			url : "<?php echo base_url('user/jobs/apply/')?>"+id_jobs,
+			type: "POST",
+			enctype: 'multipart/form-data',
+			processData: false,
+			contentType: false,
+			data: new FormData($('#form')[0]),
+			success: function(data)
+			{
+				console.log(data);
+				if(data.status) //if success close modal and reload ajax table
+				{
+				Swal({
+					title: 'Success',
+					text: 'Permintaan berhasil dikirim!',
+					type: 'success'
+				});
+				}
+				else
+				{
+					$.each(data.errors, function(key, value){
+						$('[name="'+key+'"]').addClass('is-invalid'); //select parent twice to select div form-group class and add has-error class
+						$('[name="'+key+'"]').next().text(value); //select span help-block class set text error string
+						if(value == ""){
+							$('[name="'+key+'"]').removeClass('is-invalid');
+							$('[name="'+key+'"]').addClass('is-valid');
+						}
+					});
+				}
+			},
+			error: function (jqXHR, textStatus, errorThrown)
+			{
+				alert('Error editing data');
+			}
+		});
+		
+		$('.form-group').removeClass('has-error'); // clear error class
+		$('.help-block').empty(); // clear error string
+		$('.invalid-feedback').empty();
+
+		$('#form input').on('keyup', function(){
+			$(this).removeClass('is-valid is-invalid');            
+		});
+		$('#form select').on('change', function(){
+			$(this).removeClass('is-valid is-invalid');
+		});
+
+		$('#images').val('');
+	
+	}
+
+	</script>
 </body>
 
 </html>

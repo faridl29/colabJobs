@@ -24,4 +24,9 @@ class Jobs_model extends CI_Model{
         $query = $this->db->get('jobs')->num_rows();
         return $query;
     }
+
+    function request_colaborate($insert = array()){
+        $data = $this->db->insert('apply_jobs', $insert);
+        return true;
+    }
 } 
