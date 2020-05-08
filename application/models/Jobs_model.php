@@ -29,4 +29,9 @@ class Jobs_model extends CI_Model{
         $data = $this->db->insert('apply_jobs', $insert);
         return true;
     }
+
+    function insert($insert = array()){
+        $data = $this->db->insert('jobs', $insert);
+        return true;
+    }
 } 

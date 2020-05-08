@@ -27,7 +27,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="<?php echo base_url();?>assets/LuminoAdmin/#"><span>Lumino</span>Admin</a>
+				<a class="navbar-brand" href="<?php echo base_url();?>user/home"><span>Lumino</span>Admin</a>
 				<ul class="nav navbar-top-links navbar-right">
 
 					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="<?php echo base_url();?>assets/LuminoAdmin/#">
@@ -68,7 +68,7 @@
 	
 		<ul class="nav menu">
 			<li class="active"><a href="<?php echo base_url();?>admin/profile"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-			<li><a href="<?php echo base_url();?>admin/post_job"><em class="fa fa-calendar">&nbsp;</em> Post Job</a></li>
+			<li><a href="<?php echo base_url();?>admin/post_job"><em class="fa fa-calendar">&nbsp;</em> Post Bussiness</a></li>
 			<li><a href="<?php echo base_url();?>admin/history"><em class="fa fa-bar-chart">&nbsp;</em> History</a></li>
 			<li><a href="<?php echo base_url();?>login/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>

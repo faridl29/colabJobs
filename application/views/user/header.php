@@ -47,7 +47,7 @@
                                     <nav>
                                         <ul id="navigation">
                                             <li><a href="<?php echo base_url();?>user/home">home</a></li>
-                                            <li><a href="<?php echo base_url();?>user/jobs">Browse Job</a></li>
+                                            <li><a href="<?php echo base_url();?>user/jobs">Browse Bussiness</a></li>
                                             <li><a href="<?php echo base_url();?>assets/jobboard2/#">Q&A </a></li>
                                         </ul>
                                     </nav>

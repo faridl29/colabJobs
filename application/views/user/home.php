@@ -8,10 +8,10 @@
                     <div class="col-lg-7 col-md-6">
                         <div class="slider_text">
                             <h5 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">4536+ Jobs listed</h5>
-                            <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">Colaborate Your Job</h3>
-                            <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">We provide online instant cash loans with quick approval that suit your term length</p>
+                            <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">Colaborate Your Bussiness</h3>
+                            <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">work faster and more efficiently by collaborating on business</p>
                             <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
-                                <a href="<?php echo base_url();?>assets/jobboard2/#" class="boxed-btn3">Upload your Resume</a>
+                                <a href="<?php echo base_url();?>user/jobs" class="boxed-btn3">Browse Bussiness</a>
                             </div>
                         </div>
                     </div>
@@ -23,61 +23,6 @@
         </div>
     </div>
     <!-- slider_area_end -->
-
-    <!-- catagory_area -->
-    <div class="catagory_area">
-        <div class="container">
-            <div class="row cat_search">
-                <div class="col-lg-3 col-md-4">
-                    <div class="single_input">
-                        <input type="text" placeholder="Search keyword">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <div class="single_input">
-                        <select class="wide" >
-                            <option data-display="Location">Location</option>
-                            <option value="1">Dhaka</option>
-                            <option value="2">Rangpur</option>
-                            <option value="4">Sylet</option>
-                          </select>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <div class="single_input">
-                        <select class="wide">
-                            <option data-display="Category">Category</option>
-                            <option value="1">Category 1</option>
-                            <option value="2">Category 2</option>
-                            <option value="4">Category 3</option>
-                          </select>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-12">
-                    <div class="job_btn">
-                        <a href="<?php echo base_url();?>assets/jobboard2/#" class="boxed-btn3">Find Job</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="popular_search d-flex align-items-center">
-                        <span>Popular Search:</span>
-                        <ul>
-                            <li><a href="<?php echo base_url();?>assets/jobboard2/#">Design & Creative</a></li>
-                            <li><a href="<?php echo base_url();?>assets/jobboard2/#">Marketing</a></li>
-                            <li><a href="<?php echo base_url();?>assets/jobboard2/#">Administration</a></li>
-                            <li><a href="<?php echo base_url();?>assets/jobboard2/#">Teaching & Education</a></li>
-                            <li><a href="<?php echo base_url();?>assets/jobboard2/#">Engineering</a></li>
-                            <li><a href="<?php echo base_url();?>assets/jobboard2/#">Software & Web</a></li>
-                            <li><a href="<?php echo base_url();?>assets/jobboard2/#">Telemarketing</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/ catagory_area -->
 
     <!-- popular_catagory_area_start  -->
     <div class="popular_catagory_area">
@@ -154,7 +99,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="brouse_job text-right">
-                        <a href="<?php echo base_url();?>assets/jobboard2/jobs.html" class="boxed-btn4">Browse More Job</a>
+                        <a href="<?php echo base_url();?>assets/jobboard2/jobs.html" class="boxed-btn4">Browse More Bussiness</a>
                     </div>
                 </div>
             </div>

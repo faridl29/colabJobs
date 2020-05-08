@@ -41,7 +41,7 @@
                     </div>
                     <div class="descript_wrap white-bg">
                         <div class="single_wrap" style="word-wrap: break-word;">
-                            <h4>Job description</h4>
+                            <h4>Bussiness description</h4>
                             <p><?php echo $result["deskripsi"];?></p>
                         </div>
                         
@@ -52,7 +52,7 @@
                       
                     </div>
                     <div class="apply_job_form white-bg">
-                        <h4>Apply for the colaborating job</h4>
+                        <h4>Apply for the colaborating bussiness</h4>
                         <form action="#" id="form" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6">
@@ -85,7 +85,7 @@
                 <div class="col-lg-4">
                     <div class="job_sumary">
                         <div class="summery_header">
-                            <h3>Job Summery</h3>
+                            <h3>Bussiness Summery</h3>
                         </div>
                         <div class="job_content">
                             <ul>

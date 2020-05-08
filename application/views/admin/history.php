@@ -2,7 +2,7 @@
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
-				<li><a href="<?php echo base_url();?>assets/LuminoAdmin/#">
+				<li><a href="<?php echo base_url();?>admin/profile">
 					<em class="fa fa-home"></em>
 				</a></li>
 				<li class="active">History</li>
@@ -10,11 +10,11 @@
 		</div><!--/.row-->
 		
 		
-		<div class="job_listing_area">
-			<div class="job_lists">
+		<div class="row job_listing_area" >
+			<div class="job_lists" >
 
 				<?php foreach ($data->result() as $row) :?>
-					<div class="col-lg-12 col-md-12">
+					<div class="col-lg-12 col-md-12" >
 						<div class="single_jobs white-bg d-flex justify-content-between" style="display: -webkit-box!important;display: -ms-flexbox!important;display: flex!important">
 							<div class="jobs_left d-flex align-items-center" style="width:85%;display: -webkit-box!important;display: -ms-flexbox!important;display: flex!important">
 								<div class="thumb">
@@ -34,7 +34,7 @@
 							</div>
 							<div class="jobs_right">
 								<div class="apply_now">
-									<a onclick="location.href='<?php echo base_url('user/job_detail/detail/'); echo $row->id_jobs;?>';" class="boxed-btn3" style="width:120px">Detail</a>
+									<a href="#" onclick="detail(<?php echo $row->id_jobs;?>)" class="boxed-btn3" style="width:120px">Detail</a>
 								</div>
 								<div class="date">
 									<?php get_instance()->load->helper('tgl_indo');?>
@@ -130,6 +130,11 @@
 		$('#images').val('');
 	
 	}
+
+	function detail(id_jobs)
+  	{
+		window.location.href = "<?php echo base_url('admin/job_detail/detail/')?>"+id_jobs;
+  	}
 
 	anchors.parent('li').removeClass('active');
 

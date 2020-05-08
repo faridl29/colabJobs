@@ -13,4 +13,16 @@ class History_model extends CI_Model{
         $query = $this->db->get('jobs')->num_rows();
         return $query;
     }
+
+    function get_applyer($id_jobs){
+        $this->db->where('id_jobs', $id_jobs);
+        $query = $this->db->get('apply_jobs');
+        return $query;
+    }
+
+    function accept($id, $data = array()){
+        $this->db->where("id", $id);
+        $this->db->update("apply_jobs", $data);
+        return true;
+    }
 } 

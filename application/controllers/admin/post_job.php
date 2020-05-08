@@ -8,6 +8,7 @@ class Post_job extends CI_Controller {
 		parent::__construct();
 		$this->load->helper(array('form','file'));
 		$this->load->library(array('session','form_validation','upload'));
+		$this->load->model("Jobs_model");
 
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("login"));
@@ -79,7 +80,7 @@ class Post_job extends CI_Controller {
 					'photo'				=> $gambar
 				);
 			
-				$this->db->insert('jobs', $upload);
+				$this->Jobs_model->insert($upload);
 
 				$data['status'] = $upload;
 				$this->output->set_content_type('application/json')->set_output(json_encode($data));

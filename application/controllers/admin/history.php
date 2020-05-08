@@ -51,8 +51,16 @@ class History extends CI_Controller {
        $data['data'] = $this->History_model->get_job_by_user($config["per_page"], $data['page'], $this->session->userdata("id_user"));           
 
        $data['pagination'] = $this->pagination->create_links();
-       
+       $list = $this->History_model->get_applyer("1");  
+       $this->session->set_userdata("list_applyer", $list);
        $this->load->view('admin/history', $data);
     }
-	
+    
+    public function accept($id){
+        $data = array(
+            'status'		=> "accepted"
+        );
+    
+       $this->History_model->accept($id, $data);
+    }
 }
