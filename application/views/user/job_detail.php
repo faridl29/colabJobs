@@ -145,7 +145,7 @@
     <script src="<?php echo base_url();?>assets/jobboard2/js/jquery.magnific-popup.min.js"></script>
     <script src="<?php echo base_url();?>assets/jobboard2/js/plugins.js"></script>
     <script src="<?php echo base_url();?>assets/jobboard2/js/gijgo.min.js"></script>
-
+    <script src="<?php echo base_url();?>assets/sweetalert2/sweetalert2.js"></script>
 
 
     <!--contact js-->
@@ -209,7 +209,7 @@
 			$(this).removeClass('is-valid is-invalid');
 		});
 
-		$('#images').val('');
+        $('#form')[0].reset(); 
 	
 	}
 

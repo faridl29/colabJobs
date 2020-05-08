@@ -99,186 +99,43 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="brouse_job text-right">
-                        <a href="<?php echo base_url();?>assets/jobboard2/jobs.html" class="boxed-btn4">Browse More Bussiness</a>
+                        <a href="<?php echo base_url();?>user/jobs" class="boxed-btn4">Browse More Bussiness</a>
                     </div>
                 </div>
             </div>
             <div class="job_lists">
                 <div class="row">
-                    <div class="col-lg-12 col-md-12">
-                        <div class="single_jobs white-bg d-flex justify-content-between">
-                            <div class="jobs_left d-flex align-items-center">
-                                <div class="thumb">
-                                    <img src="<?php echo base_url();?>assets/jobboard2/img/svg_icon/1.svg" alt="">
-                                </div>
-                                <div class="jobs_conetent">
-                                    <a href="<?php echo base_url();?>assets/jobboard2/job_details.html"><h4>Software Engineer</h4></a>
-                                    <div class="links_locat d-flex align-items-center">
-                                        <div class="location">
-                                            <p> <i class="fa fa-map-marker"></i> California, USA</p>
-                                        </div>
-                                        <div class="location">
-                                            <p> <i class="fa fa-clock-o"></i> Part-time</p>
+                    <?php foreach ($data->result() as $row) :?>
+                        <div class="col-lg-12 col-md-12">
+                            <div class="single_jobs white-bg d-flex justify-content-between">
+                                <div class="jobs_left d-flex align-items-center" style="width:70%">
+                                    <div class="thumb" style="width:100px;height:100px">
+                                        <img src="<?php echo base_url();?>images/<?php echo $row->photo;?>"alt="" style="width:100%">
+                                    </div>
+                                    <div class="jobs_conetent">
+                                        <a href="#" onclick="location.href='<?php echo base_url('user/job_detail/detail/'); echo $row->id_jobs;?>';"><h4><?php echo $row->judul;?></h4></a>
+                                        <div class="links_locat d-flex align-items-center">
+                                            <div class="location">
+                                                <p><?php echo $row->nama_perusahaan;?></p>
+                                            </div>
+                                            <div class="location">
+                                                <p> <i class="fa fa-map-marker"></i> <?php echo $row->domisili;?></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="jobs_right">
-                                <div class="apply_now">
-                                    <a class="heart_mark" href="<?php echo base_url();?>assets/jobboard2/#"> <i class="ti-heart"></i> </a>
-                                    <a href="<?php echo base_url();?>assets/jobboard2/job_details.html" class="boxed-btn3">Apply Now</a>
-                                </div>
-                                <div class="date">
-                                    <p>Date line: 31 Jan 2020</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="single_jobs white-bg d-flex justify-content-between">
-                            <div class="jobs_left d-flex align-items-center">
-                                <div class="thumb">
-                                    <img src="<?php echo base_url();?>assets/jobboard2/img/svg_icon/2.svg" alt="">
-                                </div>
-                                <div class="jobs_conetent">
-                                    <a href="<?php echo base_url();?>assets/jobboard2/job_details.html"><h4>Digital Marketer</h4></a>
-                                    <div class="links_locat d-flex align-items-center">
-                                        <div class="location">
-                                            <p> <i class="fa fa-map-marker"></i> California, USA</p>
-                                        </div>
-                                        <div class="location">
-                                            <p> <i class="fa fa-clock-o"></i> Part-time</p>
-                                        </div>
+                                <div class="jobs_right">
+                                    <div class="apply_now">
+                                        <a onclick="location.href='<?php echo base_url('user/job_detail/detail/'); echo $row->id_jobs;?>';" class="boxed-btn3">Apply Now</a>
+                                    </div>
+                                    <div class="date">
+                                    <?php get_instance()->load->helper('tgl_indo');?>
+                                        <p>Date line: <?php echo date_indo($row->dateline);?></p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="jobs_right">
-                                <div class="apply_now">
-                                    <a class="heart_mark" href="<?php echo base_url();?>assets/jobboard2/#"> <i class="ti-heart"></i> </a>
-                                    <a href="<?php echo base_url();?>assets/jobboard2/job_details.html" class="boxed-btn3">Apply Now</a>
-                                </div>
-                                <div class="date">
-                                    <p>Date line: 31 Jan 2020</p>
-                                </div>
-                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="single_jobs white-bg d-flex justify-content-between">
-                            <div class="jobs_left d-flex align-items-center">
-                                <div class="thumb">
-                                    <img src="<?php echo base_url();?>assets/jobboard2/img/svg_icon/3.svg" alt="">
-                                </div>
-                                <div class="jobs_conetent">
-                                    <a href="<?php echo base_url();?>assets/jobboard2/job_details.html"><h4>Wordpress Developer</h4></a>
-                                    <div class="links_locat d-flex align-items-center">
-                                        <div class="location">
-                                            <p> <i class="fa fa-map-marker"></i> California, USA</p>
-                                        </div>
-                                        <div class="location">
-                                            <p> <i class="fa fa-clock-o"></i> Part-time</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="jobs_right">
-                                <div class="apply_now">
-                                    <a class="heart_mark" href="<?php echo base_url();?>assets/jobboard2/#"> <i class="ti-heart"></i> </a>
-                                    <a href="<?php echo base_url();?>assets/jobboard2/job_details.html" class="boxed-btn3">Apply Now</a>
-                                </div>
-                                <div class="date">
-                                    <p>Date line: 31 Jan 2020</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="single_jobs white-bg d-flex justify-content-between">
-                            <div class="jobs_left d-flex align-items-center">
-                                <div class="thumb">
-                                    <img src="<?php echo base_url();?>assets/jobboard2/img/svg_icon/4.svg" alt="">
-                                </div>
-                                <div class="jobs_conetent">
-                                    <a href="<?php echo base_url();?>assets/jobboard2/job_details.html"><h4>Visual Designer</h4></a>
-                                    <div class="links_locat d-flex align-items-center">
-                                        <div class="location">
-                                            <p> <i class="fa fa-map-marker"></i> California, USA</p>
-                                        </div>
-                                        <div class="location">
-                                            <p> <i class="fa fa-clock-o"></i> Part-time</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="jobs_right">
-                                <div class="apply_now">
-                                    <a class="heart_mark" href="<?php echo base_url();?>assets/jobboard2/#"> <i class="ti-heart"></i> </a>
-                                    <a href="<?php echo base_url();?>assets/jobboard2/job_details.html" class="boxed-btn3">Apply Now</a>
-                                </div>
-                                <div class="date">
-                                    <p>Date line: 31 Jan 2020</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="single_jobs white-bg d-flex justify-content-between">
-                            <div class="jobs_left d-flex align-items-center">
-                                <div class="thumb">
-                                    <img src="<?php echo base_url();?>assets/jobboard2/img/svg_icon/5.svg" alt="">
-                                </div>
-                                <div class="jobs_conetent">
-                                    <a href="<?php echo base_url();?>assets/jobboard2/job_details.html"><h4>Software Engineer</h4></a>
-                                    <div class="links_locat d-flex align-items-center">
-                                        <div class="location">
-                                            <p> <i class="fa fa-map-marker"></i> California, USA</p>
-                                        </div>
-                                        <div class="location">
-                                            <p> <i class="fa fa-clock-o"></i> Part-time</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="jobs_right">
-                                <div class="apply_now">
-                                    <a class="heart_mark" href="<?php echo base_url();?>assets/jobboard2/#"> <i class="ti-heart"></i> </a>
-                                    <a href="<?php echo base_url();?>assets/jobboard2/job_details.html" class="boxed-btn3">Apply Now</a>
-                                </div>
-                                <div class="date">
-                                    <p>Date line: 31 Jan 2020</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="single_jobs white-bg d-flex justify-content-between">
-                            <div class="jobs_left d-flex align-items-center">
-                                <div class="thumb">
-                                    <img src="<?php echo base_url();?>assets/jobboard2/img/svg_icon/1.svg" alt="">
-                                </div>
-                                <div class="jobs_conetent">
-                                    <a href="<?php echo base_url();?>assets/jobboard2/job_details.html"><h4>Creative Designer</h4></a>
-                                    <div class="links_locat d-flex align-items-center">
-                                        <div class="location">
-                                            <p> <i class="fa fa-map-marker"></i> California, USA</p>
-                                        </div>
-                                        <div class="location">
-                                            <p> <i class="fa fa-clock-o"></i> Part-time</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="jobs_right">
-                                <div class="apply_now">
-                                    <a class="heart_mark" href="<?php echo base_url();?>assets/jobboard2/#"> <i class="ti-heart"></i> </a>
-                                    <a href="<?php echo base_url();?>assets/jobboard2/job_details.html" class="boxed-btn3">Apply Now</a>
-                                </div>
-                                <div class="date">
-                                    <p>Date line: 31 Jan 2020</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>    
                 </div>
             </div>
         </div>

@@ -83,8 +83,8 @@
 							<div class="panel panel-default">
 								<label>Dateline</label>
 									
-								<div class="panel-body">
-									<div id="calendar" name="calendar"></div>
+								<div class="panel-body">	
+        							<input type="text" class="form-control" id="datetimepicker2" placeholder="click here.." />
 								</div>
 							</div>
 							</div>
@@ -116,14 +116,15 @@
 
 
 	$('.textarea').wysihtml5()
+	$('#datetimepicker2').datepicker();
  
 	var url = window.location;
 	var anchors = $('.nav a');
-
+	
 	function upload(){
 	
 		$.ajax({
-			url : "<?php echo base_url('admin/post_job/post')?>",
+			url : "<?php echo base_url('admin/post_job/post/')?>"+$('#datetimepicker2').val(),
 			type: "POST",
 			enctype: 'multipart/form-data',
 			processData: false,
@@ -170,6 +171,7 @@
 		});
 
 		$('#images').val('');
+		$('#form')[0].reset(); 
 	
 	}
 

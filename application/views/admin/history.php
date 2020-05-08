@@ -17,8 +17,8 @@
 					<div class="col-lg-12 col-md-12" >
 						<div class="single_jobs white-bg d-flex justify-content-between" style="display: -webkit-box!important;display: -ms-flexbox!important;display: flex!important">
 							<div class="jobs_left d-flex align-items-center" style="width:85%;display: -webkit-box!important;display: -ms-flexbox!important;display: flex!important">
-								<div class="thumb">
-									<img src="<?php echo base_url();?>assets/jobboard2/img/svg_icon/1.svg" alt="">
+								<div class="thumb" style="width:100px;height:100px">
+									<img src="<?php echo base_url();?>images/<?php echo $row->photo;?>"alt="" style="width:100%">
 								</div>
 								<div class="jobs_conetent">
 									<h4><?php echo $row->judul;?></h4>

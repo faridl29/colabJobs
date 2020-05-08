@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="<?php echo base_url();?>assets/jobboard2/css/slicknav.css">
 
     <link rel="stylesheet" href="<?php echo base_url();?>assets/jobboard2/css/style.css">
-    
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/sweetalert2/sweetalert2.css">
 </head>
 
 <body>

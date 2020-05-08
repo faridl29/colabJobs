@@ -25,6 +25,8 @@ class Home extends CI_Controller {
 		$data["software"] = $this->Jobs_model->total("Software & Web");
 		$data["engineering"] = $this->Jobs_model->total("Engineering");
 		$data["garments"] = $this->Jobs_model->total("Garments / Texttile");
+		$data['data'] = $this->Jobs_model->get_jobs_list(5, 1);
+		
 		$this->load->view('user/home', $data);
     }
 }

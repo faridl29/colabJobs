@@ -20,7 +20,7 @@ class Post_job extends CI_Controller {
 		$this->load->view('admin/post_job');
 	}
 	
-	public function post(){
+	public function post($dateline){
 
 		$data = array();
 		$data['status'] = TRUE;
@@ -77,6 +77,8 @@ class Post_job extends CI_Controller {
 					'jenis_usaha' 		=> $this->input->post('jenis_usaha'),
 					'domisili' 			=> $this->input->post('domisili'),
 					'contact' 			=> $this->input->post('contact'),
+					'published'			=> date('y-m-d'),
+					'dateline'			=> "12-05-20",
 					'photo'				=> $gambar
 				);
 			
