@@ -22,6 +22,22 @@ class History_model extends CI_Model{
 
     function accept($id, $data = array()){
         $this->db->where("id", $id);
+        $apply_jobs = $this->db->get("apply_jobs")->row_array();
+
+        $this->db->where("id_jobs", $apply_jobs['id_jobs']);
+        $jobs = $this->db->get("jobs")->row_array();
+
+        date_default_timezone_set('Asia/Jakarta');
+
+        $notif = array(
+            'message' => "Permintaan kolaborasi (".$jobs['judul'].") diterima!",
+            'date'    => date('Y-m-d H:i:s'),
+            'id_user' => $apply_jobs['id_user']
+        );
+
+        $this->db->insert('notification', $notif);
+
+        $this->db->where("id", $id);
         $this->db->update("apply_jobs", $data);
         return true;
     }
