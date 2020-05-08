@@ -8,6 +8,7 @@ class Job_detail extends CI_Controller {
 		parent::__construct();
 		$this->load->library('session');
 		$this->load->model(array('Jobs_model','History_model'));
+		$this->load->model("Notification_model");
 
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("login"));
@@ -17,7 +18,8 @@ class Job_detail extends CI_Controller {
 	public function detail($id_jobs)
 	{
         $result = $this->Jobs_model->get_detail_job($id_jobs);
-        $list = $this->History_model->get_applyer($id_jobs);  
+		$list = $this->History_model->get_applyer($id_jobs);  
+		$data["notif"] = $this->Notification_model->get_notification_list($this->session->userdata("id_user"));
         $data['result'] = $result;
 		$this->session->set_userdata("list_applyer", $list);
         $this->load->view('admin/job_detail', $data);

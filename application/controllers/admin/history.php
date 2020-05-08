@@ -9,6 +9,7 @@ class History extends CI_Controller {
 		$this->load->helper(array('form','file'));
         $this->load->library(array('session','pagination'));
         $this->load->model("History_model");
+        $this->load->model("Notification_model");
 
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("login"));
@@ -53,6 +54,7 @@ class History extends CI_Controller {
        $data['pagination'] = $this->pagination->create_links();
        $list = $this->History_model->get_applyer("1");  
        $this->session->set_userdata("list_applyer", $list);
+       $data["notif"] = $this->Notification_model->get_notification_list($this->session->userdata("id_user"));
        $this->load->view('admin/history', $data);
     }
     

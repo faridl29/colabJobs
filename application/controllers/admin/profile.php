@@ -9,6 +9,7 @@ class Profile extends CI_Controller {
 		$this->load->helper(array('form','file'));
 		$this->load->library(array('session','form_validation','upload'));
 		$this->load->model("User_model");
+		$this->load->model("Notification_model");
 
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("login"));
@@ -17,7 +18,8 @@ class Profile extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('admin/profile');
+		$data["notif"] = $this->Notification_model->get_notification_list($this->session->userdata("id_user"));
+		$this->load->view('admin/profile', $data);
 	}
 	
 	public function edit_profile(){

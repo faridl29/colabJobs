@@ -9,6 +9,7 @@ class Post_job extends CI_Controller {
 		$this->load->helper(array('form','file'));
 		$this->load->library(array('session','form_validation','upload'));
 		$this->load->model("Jobs_model");
+		$this->load->model("Notification_model");
 
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("login"));
@@ -17,7 +18,8 @@ class Post_job extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('admin/post_job');
+		$data["notif"] = $this->Notification_model->get_notification_list($this->session->userdata("id_user"));
+		$this->load->view('admin/post_job', $data);
 	}
 	
 	public function post($dateline){
