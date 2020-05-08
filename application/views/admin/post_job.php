@@ -80,12 +80,9 @@
 								<input name="images" id="images" class="form-control" type="file" accept="image/png,image/gif,image/jpeg, image/jpg">
 								<span class="invalid-feedback"></span>
 							</div>
-							<div class="panel panel-default">
+							<div class="form-group">
 								<label>Dateline</label>
-									
-								<div class="panel-body">	
-        							<input type="text" class="form-control" id="datetimepicker2" placeholder="click here.." />
-								</div>
+        						<input type="text" class="form-control" id="datetimepicker2" placeholder="click here.." />
 							</div>
 							</div>
 						</div>
