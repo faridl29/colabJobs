@@ -116,7 +116,9 @@
 
 
 	$('.textarea').wysihtml5()
-	$('#datetimepicker2').datepicker();
+	$('#datetimepicker2').datepicker({
+		format: 'yyyy-mm-dd'
+	});
  
 	var url = window.location;
 	var anchors = $('.nav a');

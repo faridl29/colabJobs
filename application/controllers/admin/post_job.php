@@ -78,7 +78,7 @@ class Post_job extends CI_Controller {
 					'domisili' 			=> $this->input->post('domisili'),
 					'contact' 			=> $this->input->post('contact'),
 					'published'			=> date('y-m-d'),
-					'dateline'			=> "12-05-20",
+					'dateline'			=> urldecode($dateline),
 					'photo'				=> $gambar
 				);
 			
