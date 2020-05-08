@@ -77,8 +77,6 @@ class Profile extends CI_Controller {
 				
 					$this->User_model->edit_profile($this->session->userdata("id_user"),$update);
 
-					$data['status'] = TRUE;
-					$this->output->set_content_type('application/json')->set_output(json_encode($data));
 				}
 			}
 			
@@ -91,9 +89,23 @@ class Profile extends CI_Controller {
 			
 				$this->User_model->edit_profile($this->session->userdata("id_user"),$update);
 
+				
+			}
+
+			$user = $this->User_model->get_user_by_id($this->session->userdata("id_user"));
+				$data_session = array(
+					'id_user' => $user['id_user'],
+					'nama' => $user['nama'],
+					'email' => $user['email'],
+					'telepon' => $user['telepon'],
+					'foto' => $user['foto'],
+					'status' => "login"
+					);
+		
+				$this->session->set_userdata($data_session);
+
 				$data['status'] = TRUE;
 				$this->output->set_content_type('application/json')->set_output(json_encode($data));
-			}
 
 		}
 	}

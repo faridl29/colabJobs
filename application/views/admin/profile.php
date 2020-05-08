@@ -152,6 +152,7 @@
 			data: new FormData($('#form')[0]),
 			success: function(data)
 			{
+				location.reload();
 				console.log(data);
 				if(data.status) //if success close modal and reload ajax table
 				{

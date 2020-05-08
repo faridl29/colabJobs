@@ -91,6 +91,15 @@ class User_model extends CI_Model {
         }
     }
 
+    public function get_user_by_id($id){
+        $this->db->where('id_user', $id);
+        $data = $this->db->get('user');
+        if($data->num_rows() > 0){
+           
+            return $data->row_array();
+        }
+    }
+
     public function edit_profile($id_user, $update = array()){
         $this->db->where('id_user', $id_user);
 		$this->db->update('user', $update);
