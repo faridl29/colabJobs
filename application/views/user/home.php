@@ -7,7 +7,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-7 col-md-6">
                         <div class="slider_text">
-                            <h5 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">4536+ Jobs listed</h5>
+                            <h5 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s"><?php echo $all;?>+ Bussiness Listed</h5>
                             <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">Colaborate Your Bussiness</h3>
                             <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">work faster and more efficiently by collaborating on business</p>
                             <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
@@ -38,49 +38,49 @@
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="single_catagory">
                         <a href="#" onclick="get_with_category('Design & Creative')"><h4>Design & Creative</h4></a>
-                        <p> <span>50</span> Available position</p>
+                        <p> <span><?php echo $design;?></span> Available</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="single_catagory">
                         <a href="#" onclick="get_with_category('Marketing')"><h4>Marketing</h4></a>
-                        <p> <span>50</span> Available position</p>
+                        <p> <span><?php echo $marketing;?></span> Available</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="single_catagory">
                         <a href="#" onclick="get_with_category('Telemarketing')"><h4>Telemarketing</h4></a>
-                        <p> <span>50</span> Available position</p>
+                        <p> <span><?php echo $telemarketing;?></span> Available</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="single_catagory">
                         <a href="#" onclick="get_with_category('Software & Web')"><h4>Software & Web</h4></a>
-                        <p> <span>50</span> Available position</p>
+                        <p> <span><?php echo $software;?></span> Available</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="single_catagory">
                         <a href="#" onclick="get_with_category('Administration')"><h4>Administration</h4></a>
-                        <p> <span>50</span> Available position</p>
+                        <p> <span><?php echo $administration;?></span> Available</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="single_catagory">
                         <a href="#" onclick="get_with_category('Teaching & Education')"><h4>Teaching & Education</h4></a>
-                        <p> <span>50</span> Available position</p>
+                        <p> <span><?php echo $teaching;?></span> Available</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="single_catagory">
                         <a href="#" onclick="get_with_category('Engineering')"><h4>Engineering</h4></a>
-                        <p> <span>50</span> Available position</p>
+                        <p> <span><?php echo $engineering;?></span> Available</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="single_catagory">
                         <a href="#" onclick="get_with_category('Garments / Textile')"><h4>Garments / Textile</h4></a>
-                        <p> <span>50</span> Available position</p>
+                        <p> <span><?php echo $garments;?></span> Available</p>
                     </div>
                 </div>
             </div>
