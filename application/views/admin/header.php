@@ -38,7 +38,8 @@
 								<li><a>
 									<div class="single_wrap" style="word-wrap: break-word;">
 										<em class="fa fa-envelope"></em> <?php echo $row->message;?>
-										<span class="pull-right text-muted small"><?php echo $row->date;?></span>
+										<?php get_instance()->load->helper('waktu');?>
+										<span class="pull-right text-muted small"><?php echo waktu_lalu($row->date);?></span>
 									</div>
 								</a></li>
 								<li class="divider"></li>
