@@ -24,6 +24,59 @@
 
     <link rel="stylesheet" href="<?php echo base_url();?>assets/jobboard2/css/style.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/sweetalert2/sweetalert2.css">
+
+	<style>
+        .chat .panel-body ul {
+        list-style: none;
+        margin: -15px;
+        padding: 15px; }
+
+        .chat .panel-body ul li {
+        margin-bottom: 10px;
+        padding: 15px 5px;
+        border-bottom: 1px solid #e9ecf2; }
+
+        .chat ul li.left .chat-body {
+        margin-left: 80px; }
+
+        .chat ul li.right .chat-body {
+        margin-right: 80px; }
+
+        .chat ul li .chat-body p {
+        margin: 0; }
+
+        .chat .panel-body {
+        overflow-y: scroll;
+        height: 300px; }
+
+        .chat-body small {
+        margin-left: 5px; }
+
+        .panel {
+        border: 0; }
+
+        .panel-container {
+        padding-top: 20px; }
+
+        .panel-heading .fa-toggle-up, .panel-heading .fa-toggle-down {
+        font-size: 17px; }
+
+        .panel-heading {
+        font-size: 20px;
+        font-weight: 300;
+        letter-spacing: 0.025em;
+        height: 60px;
+        line-height: 38px; }
+
+        .panel-footer {
+        background: #fff;
+        border-top: 1px solid #e9ecf2; }
+        
+        .img-circle {
+            border-radius: 50%;
+        }
+        
+    </style>
 </head>
 
 <body>
@@ -48,7 +101,7 @@
                                         <ul id="navigation">
                                             <li><a href="<?php echo base_url();?>user/home">home</a></li>
                                             <li><a href="<?php echo base_url();?>user/jobs">Browse Bussiness</a></li>
-                                            <li><a href="<?php echo base_url();?>assets/jobboard2/#">Q&A </a></li>
+                                            <li><a href="<?php echo base_url();?>user/QuestionAnswer">Q&A </a></li>
                                         </ul>
                                     </nav>
                                 </div>

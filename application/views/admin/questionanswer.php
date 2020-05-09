@@ -19,7 +19,7 @@
 		</div><!--/.row-->
 		
 		
-		<div class="row job_listing_area" style="margin-top:-90px;">
+		<div class="job_listing_area">
 			<div class="job_lists" >
 
 				<?php foreach ($data->result() as $row) :?>
@@ -43,7 +43,7 @@
 										<div class="jobs_right" style="margin-left:20px">
 											<div class="date">
 												
-												<p>0 Comments</p>
+												<p><?php echo $data->num_rows();?></p>
 											</div>
 										</div>
 									</div>
@@ -139,15 +139,20 @@
 			success: function(data)
 			{
 				$('#modal_form').modal('hide');
-				location.reload();
+				
 				console.log(data);
 				if(data.status) //if success close modal and reload ajax table
 				{
-				Swal({
-					title: 'Success',
-					text: 'Pertanyaan berhasil diposting!',
-					type: 'success'
-				});
+					Swal({
+						title: 'Success',
+						text: 'Pertanyaan berhasil diposting!',
+						type: 'success',
+						timer:3000,
+						showConfirmButton: false
+					});
+
+					window.setTimeout(function(){ } ,3000);
+                    location.reload();
 				}
 				else
 				{

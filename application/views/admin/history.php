@@ -8,9 +8,9 @@
 				<li class="active">History</li>
 			</ol>
 		</div><!--/.row-->
+	
 		
-		
-		<div class="row job_listing_area" >
+		<div class="job_listing_area" >
 			<div class="job_lists" >
 
 				<?php foreach ($data->result() as $row) :?>

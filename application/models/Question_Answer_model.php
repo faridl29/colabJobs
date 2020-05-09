@@ -1,6 +1,13 @@
 <?php
 class Question_Answer_model extends CI_Model{
     
+    function get_question_all($limit, $start){
+        
+        $this->db->join('user', 'user.id_user = question_answer.id_user');
+        $query = $this->db->get('question_answer', $limit, $start);
+        return $query;
+    }
+
     function get_question_list($limit, $start, $id_user){
         $this->db->where('id_user', $id_user);
         $query = $this->db->get('question_answer', $limit, $start);
