@@ -27,7 +27,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="<?php echo base_url();?>user/home"><span>Lumino</span>Admin</a>
+				<a href="<?php echo base_url('user/home')?>" ><img  src="<?php echo base_url();?>images/logo.png" alt="" style="width:180px;height:50px; margin-top:5px"></a>
 				<ul class="nav navbar-top-links navbar-right">
 
 					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="<?php echo base_url();?>assets/LuminoAdmin/#">

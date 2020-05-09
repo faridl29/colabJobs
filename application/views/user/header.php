@@ -71,7 +71,7 @@
         .panel-footer {
         background: #fff;
         border-top: 1px solid #e9ecf2; }
-        
+
         .img-circle {
             border-radius: 50%;
         }
@@ -90,8 +90,8 @@
                         <div class="row align-items-center">
                             <div class="col-xl-3 col-lg-2">
                                 <div class="logo">
-                                    <a href="<?php echo base_url();?>assets/jobboard2/index.html">
-                                        <img src="<?php echo base_url();?>assets/jobboard2/img/logo.png" alt="">
+                                    <a href="<?php echo base_url();?>user/home">
+                                        <img src="<?php echo base_url();?>images/logo.png" alt="" style="width:206px;height:59px">
                                     </a>
                                 </div>
                             </div>

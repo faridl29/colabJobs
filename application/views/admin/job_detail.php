@@ -4,7 +4,7 @@
 
     <div class="row">
         <ol class="breadcrumb">
-            <li><a href="<?php echo base_url();?>admin/profile">
+            <li><a href="<?php echo base_url();?>user/home">
                 <em class="fa fa-home"></em>
             </a></li>
             <li><a href="<?php echo base_url();?>admin/history">History</a></li>
