@@ -43,7 +43,7 @@
 										<div class="jobs_right" style="margin-left:20px">
 											<div class="date">
 												
-												<p><?php echo $data->num_rows();?></p>
+												<p><?php echo $row->jumlah;?> Comments</p>
 											</div>
 										</div>
 									</div>

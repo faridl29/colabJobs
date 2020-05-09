@@ -65,7 +65,7 @@
                                                 <div class="jobs_right" style="margin-left:20px">
                                                     <div class="date">
                                                         
-                                                        <p>0 Comments</p>
+                                                        <p><?php echo $row->jumlah;?> Comments</p>
                                                     </div>
                                                 </div>
                                             </div>
