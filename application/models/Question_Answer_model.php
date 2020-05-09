@@ -12,4 +12,9 @@ class Question_Answer_model extends CI_Model{
         $query = $this->db->get('question_answer');
         return $query;
     }
+
+    function insert($upload = array()){
+        $this->db->insert('question_answer', $upload);
+        return TRUE;
+    }
 } 

@@ -7,7 +7,7 @@ class QuestionAnswer extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper(array('form','file'));
-        $this->load->library(array('session','pagination'));
+        $this->load->library(array('session','pagination','form_validation'));
         $this->load->model("Question_Answer_model");
         $this->load->model("Notification_model");
 
@@ -58,11 +58,45 @@ class QuestionAnswer extends CI_Controller {
        $this->load->view('admin/questionanswer', $data);
     }
     
-    public function accept($id){
-        $data = array(
-            'status'		=> "accepted"
-        );
-    
-       $this->History_model->accept($id, $data);
-    }
+    public function post(){
+
+		$data = array();
+		$data['status'] = TRUE;
+
+		$this->_validate();
+
+        if ($this->form_validation->run() == FALSE )
+        {
+            $errors = array(
+                'main' 			    => form_error('main'),
+				'detail' 			=> form_error('detail')
+			);
+            $data = array(
+                'status' 		=> FALSE,
+				'errors' 		=> $errors
+            );
+            $this->output->set_content_type('application/json')->set_output(json_encode($data));
+        }else{
+
+            $upload = array(
+                'id_user'			=> $this->session->userdata("id_user"),
+                'title'      		=> $this->input->post('main'),
+                'detail'			=> $this->input->post('detail'),
+                'date'			    => date('Y-m-d H:i:s'),
+            );
+        
+            $this->Question_Answer_model->insert($upload);
+
+            $data['status'] = $upload;
+            $this->output->set_content_type('application/json')->set_output(json_encode($data));
+			
+		}
+	}
+
+	private function _validate()
+	{
+		$this->form_validation->set_error_delimiters('', '');
+        $this->form_validation->set_rules('main', 'Main Question', 'required');
+		$this->form_validation->set_rules('detail', 'Detail Question', 'required');
+	}
 }
