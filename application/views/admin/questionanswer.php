@@ -51,7 +51,7 @@
 							</div>
 							<div class="jobs_right">
 								<div class="apply_now">
-									<a href="#" onclick="view()" class="boxed-btn3" style="width:120px">View</a>
+									<a href="#" onclick="detail(<?php echo $row->id_question;?>)" class="boxed-btn3" style="width:120px">View</a>
 								</div>
 							</div>
 						</div>
@@ -188,9 +188,9 @@
         $('#modal_form').modal('show'); // show bootstrap modal
 	}
 
-	function detail(id_jobs)
+	function detail(id_question)
   	{
-		window.location.href = "<?php echo base_url('admin/job_detail/detail/')?>"+id_jobs;
+		window.location.href = "<?php echo base_url('admin/detail_question_answer/detail/')?>"+id_question;
   	}
 
 	anchors.parent('li').removeClass('active');

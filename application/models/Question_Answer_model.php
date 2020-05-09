@@ -17,4 +17,18 @@ class Question_Answer_model extends CI_Model{
         $this->db->insert('question_answer', $upload);
         return TRUE;
     }
+
+    function get_question_by_id($id_question){
+        $this->db->where('id_question', $id_question);
+        $query = $this->db->get('question_answer');
+        return $query;
+    }
+
+    function get_comments($id_question){
+        $this->db->where('id_question', $id_question);
+        $this->db->order_by("date", "asc");
+        $this->db->join('user', 'user.id_user = comments.id_user');
+        $query = $this->db->get('comments');
+        return $query;
+    }
 } 
