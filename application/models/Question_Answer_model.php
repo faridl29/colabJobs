@@ -20,6 +20,7 @@ class Question_Answer_model extends CI_Model{
 
     function get_question_by_id($id_question){
         $this->db->where('id_question', $id_question);
+        $this->db->join('user', 'user.id_user = question_answer.id_user');
         $query = $this->db->get('question_answer');
         return $query;
     }
@@ -30,5 +31,10 @@ class Question_Answer_model extends CI_Model{
         $this->db->join('user', 'user.id_user = comments.id_user');
         $query = $this->db->get('comments');
         return $query;
+    }
+
+    function send($data = array()){
+        $this->db->insert("comments", $data);
+        return true;
     }
 } 

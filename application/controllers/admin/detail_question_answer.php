@@ -22,6 +22,22 @@ class Detail_question_answer extends CI_Controller {
        
         $this->load->view('admin/detail_questionanswer', $data);
     
+    }
+    
+    public function send()
+	{
+        $data = array(
+
+            'id_question'   => $this->input->post('id_question'),
+			'id_user'       => $this->session->userdata("id_user"),
+			'comment'       => $this->input->post('comment'),
+			'date'          => date('Y-m-d H:i:s'),
+        );
+
+        $this->Question_Answer_model->send($data);
+        
+        $this->output->set_content_type('application/json')->set_output(json_encode($data));
+    
 	}
 	
 }
