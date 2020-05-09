@@ -3,16 +3,18 @@ class Question_Answer_model extends CI_Model{
     
     function get_question_all($limit, $start){
         
-        $this->db->select('comments.*, question_answer.*, count(comments.id_comment) as jumlah');
+        $this->db->select('comments.*, question_answer.*, user.*, count(comments.id_comment) as jumlah');
         $this->db->join('comments', 'comments.id_question = question_answer.id_question','left');
+        $this->db->join('user', 'user.id_user = question_answer.id_user');
         $this->db->group_by('question_answer.id_question');   
         $query = $this->db->get('question_answer', $limit, $start);
         return $query;
     }
 
     function get_question_list($limit, $start, $id_user){
-        $this->db->select('comments.*, question_answer.*, count(comments.id_comment) as jumlah');
+        $this->db->select('comments.*, question_answer.*, user.*, count(comments.id_comment) as jumlah');
         $this->db->join('comments', 'comments.id_question = question_answer.id_question','left');
+        $this->db->join('user', 'user.id_user = question_answer.id_user');
         $this->db->where('question_answer.id_user', $id_user);   
         $this->db->group_by('question_answer.id_question');      
         $query = $this->db->get('question_answer', $limit, $start);

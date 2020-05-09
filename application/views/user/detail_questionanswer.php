@@ -23,9 +23,10 @@
                     <hr>
                 </div>
                 <div class="panel-body" style="padding-left:20px; padding-right:20px; padding-bottom:20px">
-                    <h3><b><font color="black"><?php echo $question["title"];?></font></b></h3>
+                    <h4><b><font color="black"><?php echo $question["title"];?></font></b></h4>
                     <p><?php echo $question["detail"];?></p>
                 </div>
+                
             </div>   
                
             <div class="panel panel-default chat" style="margin-top:20px;background:#fff">

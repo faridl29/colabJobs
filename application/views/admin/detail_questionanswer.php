@@ -16,7 +16,7 @@
 		<div class="col-xs-12">
 			<div class="row">
 				<div class="col-xs-10 col-md-10">
-					<h3><b><font color="black"><?php echo $question["title"];?></font></b></h3>
+					<h4><b><font color="black"><?php echo $question["title"];?></font></b></h4>
 					<p><?php echo $question["detail"];?></p>
 				</div>
 			</div>

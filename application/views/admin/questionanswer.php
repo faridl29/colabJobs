@@ -28,7 +28,9 @@
 							<div class="jobs_left d-flex align-items-center" style="width:85%;display: -webkit-box!important;display: -ms-flexbox!important;display: flex!important">
 							
 								<div class="jobs_conetent" style="margin-right:50px">
-									<h4><?php echo substr($row->title, 0, 200) . (strlen($row->title) > 200 ? "..." : '');?></h4>
+									<a href="#" onclick="detail(<?php echo $row->id_question;?>)">
+										<h4><?php echo substr($row->title, 0, 200) . (strlen($row->title) > 200 ? "..." : '');?></h4>
+									</a>
 									<div class="location" style="margin-bottom:-20px;">
 										<p><?php echo substr($row->detail, 0, 200) . (strlen($row->detail) > 200 ? "..." : ''); ?></p>
 									</div>
@@ -49,10 +51,13 @@
 									</div>
 								</div>
 							</div>
-							<div class="jobs_right">
-								<div class="apply_now">
-									<a href="#" onclick="detail(<?php echo $row->id_question;?>)" class="boxed-btn3" style="width:120px">View</a>
-								</div>
+							<div class="jobs_right" style="width:150px">
+								<div class="pull-right">
+									<img src="<?php echo base_url("images/").$row->foto;?>" alt="User Avatar" class="img-circle pull-right" style="width:50px;"/>
+								
+									<p><?php echo $row->nama;?></p>
+								</div>	
+								
 							</div>
 						</div>
 					</div>
