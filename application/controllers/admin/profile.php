@@ -8,8 +8,7 @@ class Profile extends CI_Controller {
 		parent::__construct();
 		$this->load->helper(array('form','file'));
 		$this->load->library(array('session','form_validation','upload'));
-		$this->load->model("User_model");
-		$this->load->model("Notification_model");
+		$this->load->model(array("User_model","Notification_model","History_model","Question_Answer_model"));
 
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("login"));
@@ -19,6 +18,8 @@ class Profile extends CI_Controller {
 	public function index()
 	{
 		$data["notif"] = $this->Notification_model->get_notification_list($this->session->userdata("id_user"));
+		$data["total_bussiness"] = $this->History_model->total($this->session->userdata("id_user"));
+		$data["total_question"] = $this->Question_Answer_model->get_total_question($this->session->userdata("id_user"))->num_rows();
 		$this->load->view('admin/profile', $data);
 	}
 	
