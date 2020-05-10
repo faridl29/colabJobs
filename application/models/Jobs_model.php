@@ -26,6 +26,13 @@ class Jobs_model extends CI_Model{
         return $query;
     }
 
+    function get_job_with_location_category($limit, $start, $location, $category){
+        $this->db->like('domisili', $location);
+        $this->db->like('jenis_usaha', $category);
+        $query = $this->db->get('jobs', $limit, $start);
+        return $query;
+    }
+
     function total($category){
         $this->db->where('jenis_usaha', urldecode($category));
         $query = $this->db->get('jobs')->num_rows();
@@ -35,6 +42,13 @@ class Jobs_model extends CI_Model{
     function total_search($search){
         $this->db->like('judul', $search);
         $this->db->or_like('deskripsi', $search);
+        $query = $this->db->get('jobs')->num_rows();
+        return $query;
+    }
+
+    function total_search_location_category($location, $category){
+        $this->db->like('domisili', $location);
+        $this->db->like('jenis_usaha', $category);
         $query = $this->db->get('jobs')->num_rows();
         return $query;
     }

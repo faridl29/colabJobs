@@ -22,7 +22,7 @@
                     <div class="job_filter white-bg">
                         <div class="form_inner white-bg">
                             <h3>Filter</h3>
-                            <form action="<?php echo base_url('user/jobs/search'); ?>" method="post">
+                            <form action="<?php echo base_url('user/jobs/search_location_category'); ?>" method="post">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="single_field">
@@ -31,16 +31,16 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="single_field">
-                                            <select class="wide">
+                                            <select class="wide" name="category">
                                                 <option data-display="Category">Category</option>
-                                                <option value="1">Design & Creative</option>
-                                                <option value="2">Marketing</option>
-                                                <option value="2">Telemarketing</option>
-                                                <option value="2">Software & Web</option>
-                                                <option value="2">Administration</option>
-                                                <option value="2">Teaching & Education</option>
-                                                <option value="2">Engineering</option>
-                                                <option value="2">Garments / Textile</option>
+                                                <option value="Design & Creative">Design & Creative</option>
+                                                <option value="Marketing">Marketing</option>
+                                                <option value="Telemarketing">Telemarketing</option>
+                                                <option value="Software & Web">Software & Web</option>
+                                                <option value="Administration">Administration</option>
+                                                <option value="Teaching & Education">Teaching & Education</option>
+                                                <option value="Engineering">Engineering</option>
+                                                <option value="Garments / Textile">Garments / Textile</option>
                                             </select>
                                         </div>
                                     </div>
