@@ -19,8 +19,22 @@ class Jobs_model extends CI_Model{
         return $query;
     }
 
+    function get_job_with_search($limit, $start, $search){
+        $this->db->like('judul', $search);
+        $this->db->or_like('deskripsi', $search);
+        $query = $this->db->get('jobs', $limit, $start);
+        return $query;
+    }
+
     function total($category){
         $this->db->where('jenis_usaha', urldecode($category));
+        $query = $this->db->get('jobs')->num_rows();
+        return $query;
+    }
+
+    function total_search($search){
+        $this->db->like('judul', $search);
+        $this->db->or_like('deskripsi', $search);
         $query = $this->db->get('jobs')->num_rows();
         return $query;
     }
