@@ -20,6 +20,18 @@ class Question_Answer_model extends CI_Model{
         $query = $this->db->get('question_answer', $limit, $start);
         return $query;
     }
+
+    function get_question_with_filter($limit, $start, $search){
+        
+        $this->db->select('comments.*, question_answer.*, user.*, count(comments.id_comment) as jumlah');
+        $this->db->join('comments', 'comments.id_question = question_answer.id_question','left');
+        $this->db->join('user', 'user.id_user = question_answer.id_user');
+        $this->db->like('question_answer.title', $search);
+        $this->db->or_like('question_answer.detail', $search);
+        $this->db->group_by('question_answer.id_question');   
+        $query = $this->db->get('question_answer', $limit, $start);
+        return $query;
+    }
     
     function get_total_question($id_user){
         $this->db->where('id_user', $id_user);

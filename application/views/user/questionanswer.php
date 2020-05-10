@@ -24,16 +24,12 @@
                         <div class="recent_joblist white-bg ">
                             <div class="row align-items-center">
                                 <div class="col-md-6">
-                                    <h4>Job Listing</h4>
+                                    <h4>Question Listing</h4>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="serch_cat d-flex justify-content-end">
-                                        <select>
-                                            <option data-display="Most Recent">Most Recent</option>
-                                            <option value="1">Marketer</option>
-                                            <option value="2">Wordpress </option>
-                                            <option value="4">Designer</option>
-                                        </select>
+                                        <input name="search" id="search" value="<?php echo $search;?>" type="text" class="form-control" style="width:175px" placeholder="Search..">
+                                        <button onclick="search()" class="btn btn-primary" style="margin-left:20px">Search</button>
                                     </div>
                                 </div>
                             </div>
@@ -155,6 +151,13 @@
 
 
 	<script type="text/javascript">
+
+        function search()
+        {
+            window.location.href = "<?php echo base_url('user/QuestionAnswer/search/')?>"+$("#search").val();
+			
+		}
+
         function detail(id_question)
         {
             window.location.href = "<?php echo base_url('user/detail_question_answer/detail/')?>"+id_question;
