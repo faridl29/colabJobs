@@ -155,7 +155,7 @@ class Profile extends CI_Controller {
 	private function _validate()
 	{
 		$this->form_validation->set_error_delimiters('', '');
-        $this->form_validation->set_rules('nama', 'Nama', 'required');
+        $this->form_validation->set_rules('nama', 'Name', 'required');
 		$this->form_validation->set_rules('email', 'Email', 'required');
 		$this->form_validation->set_rules('telepon', 'Telepon', 'required');
 		

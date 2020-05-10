@@ -26,7 +26,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="single_field">
-                                            <input name ="locaation" type="text" placeholder="Location">
+                                            <input name ="location" type="text" placeholder="Location">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">

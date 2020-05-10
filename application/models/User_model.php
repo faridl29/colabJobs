@@ -12,12 +12,9 @@ class User_model extends CI_Model {
 
 	public function simpanUser($nama, $email, $password, $telepon, $photo) {
         $uuid = uniqid('', true);
-        $hash = $this->hashSSHA($password);
-        $encrypted_password = $hash["encrypted"]; // encrypted password
-        $salt = $hash["salt"]; // salt
  
-        $sql = "INSERT INTO user(id_user, nama, email, telepon, foto, password, salt) VALUES(?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $this->db->query($sql,array($uuid, $nama, $email, $telepon, $photo, $encrypted_password, $salt));
+        $sql = "INSERT INTO user(id_user, nama, email, telepon, foto, password) VALUES(?, ?, ?, ?, ?, ?)";
+        $stmt = $this->db->query($sql,array($uuid, $nama, $email, $telepon, $photo, $password));
 
 
         // cek jika sudah sukses
@@ -33,21 +30,14 @@ class User_model extends CI_Model {
 
     public function getUserByEmailAndPassword($email, $password) {
  
-        $sql = "SELECT * from user WHERE email = ?";
-		$stmt = $this->db->query($sql, array($email));
+        $sql = "SELECT * from user WHERE email = ? AND password = ?";
+		$stmt = $this->db->query($sql, array($email, $password));
  
         if ($stmt) {
             $user = $stmt->row_array();
- 
-            // verifikasi password user
-            $salt = $user['salt'];
-            $encrypted_password = $user['password'];
-            $hash = $this->checkhashSSHA($salt, $password);
-            // cek password jika sesuai
-            if ($encrypted_password == $hash) {
-                // autentikasi user berhasil
-                return $user;
-            }
+            
+            return $user;
+            
         } else {
             return NULL;
         }
@@ -66,21 +56,6 @@ class User_model extends CI_Model {
         }
     }
  
-    public function hashSSHA($password) {
- 
-        $salt = sha1(rand());
-        $salt = substr($salt, 0, 10);
-        $encrypted = base64_encode(sha1($password . $salt, true) . $salt);
-        $hash = array("salt" => $salt, "encrypted" => $encrypted);
-        return $hash;
-    }
- 
-    public function checkhashSSHA($salt, $password) {
- 
-        $hash = base64_encode(sha1($password . $salt, true) . $salt);
- 
-        return $hash;
-    }
 
     public function getData($email){
         $this->db->where('email', $email);
@@ -106,13 +81,9 @@ class User_model extends CI_Model {
     }
 
     public function change_password($id_user, $password) {
-        $hash = $this->hashSSHA($password);
-        $encrypted_password = $hash["encrypted"]; // encrypted password
-        $salt = $hash["salt"]; // salt
  
         $data = array(
-            'password'  => $encrypted_password,
-            'salt'      => $salt
+            'password'  => $password
         );
 
         $this->db->where('id_user', $id_user);
