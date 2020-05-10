@@ -110,12 +110,62 @@ class Profile extends CI_Controller {
 		}
 	}
 
+	public function change_password(){
+
+		$data = array();
+		$data['status'] = TRUE;
+
+		$this->_validate_password();
+
+        if ($this->form_validation->run() == FALSE )
+        {
+            $errors = array(
+                'last_password' 		=> form_error('last_password'),
+				'new_password' 			=> form_error('new_password'),
+				'confirm_new_password'  => form_error('confirm_new_password'),
+			);
+            $data = array(
+                'status' 		=> FALSE,
+				'errors' 		=> $errors
+            );
+            $this->output->set_content_type('application/json')->set_output(json_encode($data));
+        }else{
+			$last_password = $this->input->post("last_password");
+			$new_password = $this->input->post("new_password");
+			$cek = $this->User_model->getUserByEmailAndPassword($this->session->userdata("email"), $last_password);
+
+			if ($cek != false) {
+	
+				$this->User_model->change_password($this->session->userdata("id_user"),$new_password);
+
+				$data['status'] = TRUE;
+				$data['error'] = false;
+				$this->output->set_content_type('application/json')->set_output(json_encode($data));
+
+			}else{
+				$data['status'] = TRUE;
+				$data['error'] = TRUE;
+				$this->output->set_content_type('application/json')->set_output(json_encode($data));
+			}
+
+		}
+	}
+
 	private function _validate()
 	{
 		$this->form_validation->set_error_delimiters('', '');
         $this->form_validation->set_rules('nama', 'Nama', 'required');
 		$this->form_validation->set_rules('email', 'Email', 'required');
 		$this->form_validation->set_rules('telepon', 'Telepon', 'required');
+		
+	}
+
+	private function _validate_password()
+	{
+		$this->form_validation->set_error_delimiters('', '');
+        $this->form_validation->set_rules('last_password', 'Last Password', 'required');
+		$this->form_validation->set_rules('new_password', 'New Password', 'required');
+		$this->form_validation->set_rules('confirm_new_password', 'Confirm New Password', 'required|matches[new_password]');
 		
 	}
 }

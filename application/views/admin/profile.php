@@ -90,18 +90,21 @@
 								</form>
 							</div>
 							<div class="col-md-6">
-								<form role="form">
+								<form action="#" id="form_password" method="post" >
 									<div class="form-group">
 										<label>Last Password</label>
-										<input class="form-control">
+										<input type="password" class="form-control" name="last_password">
+										<span class="invalid-feedback"></span>
 									</div>
 									<div class="form-group">
 										<label>New Password</label>
-										<input type="password" class="form-control">
+										<input type="password" class="form-control" name="new_password">
+										<span class="invalid-feedback"></span>
 									</div>
 									<div class="form-group">
 										<label>Confirm New Password</label>
-										<input type="password" class="form-control">
+										<input type="password" class="form-control" name="confirm_new_password">
+										<span class="invalid-feedback"></span>
 									</div>
 									<!-- Form actions -->
 									<div class="form-group">
@@ -152,15 +155,17 @@
 			data: new FormData($('#form')[0]),
 			success: function(data)
 			{
-				location.reload();
 				console.log(data);
 				if(data.status) //if success close modal and reload ajax table
 				{
-				Swal({
-					title: 'Success',
-					text: 'Profile berhasil diubah!',
-					type: 'success'
-				});
+					Swal({
+						title: 'Success',
+						text: 'Profile berhasil diubah!',
+						type: 'success',
+						showConfirmButton: false
+					});
+					
+					location.reload();
 				}
 				else
 				{
@@ -193,6 +198,60 @@
 
 		$('#images').val('');
 	
+	}
+
+	function change_password(){
+	
+		$.ajax({
+			url : "<?php echo base_url('admin/profile/change_password')?>",
+			type: "POST",
+			data: $('#form_password').serialize(),
+            dataType: "json",
+			success: function(data)
+			{
+				console.log(data);
+				if(data.status) //if success close modal and reload ajax table
+				{
+					if(data.error){
+						alert("Password yang anda masukan salah!")
+					} else {
+						Swal({
+							title: 'Success',
+							text: 'Password berhasil diubah!',
+							type: 'success',
+						});
+						$('#form_password')[0].reset(); 
+					}
+					
+				}
+				else
+				{
+					$.each(data.errors, function(key, value){
+						$('[name="'+key+'"]').addClass('is-invalid'); //select parent twice to select div form-group class and add has-error class
+						$('[name="'+key+'"]').next().text(value); //select span help-block class set text error string
+						if(value == ""){
+							$('[name="'+key+'"]').removeClass('is-invalid');
+							$('[name="'+key+'"]').addClass('is-valid');
+						}
+					});
+				}
+			},
+			error: function (jqXHR, textStatus, errorThrown)
+			{
+				alert('Error editing data');
+			}
+		});
+		
+		$('.form-group').removeClass('has-error'); // clear error class
+		$('.help-block').empty(); // clear error string
+		$('.invalid-feedback').empty();
+
+		$('#form_password input').on('keyup', function(){
+			$(this).removeClass('is-valid is-invalid');            
+		});
+		$('#form_password select').on('change', function(){
+			$(this).removeClass('is-valid is-invalid');
+		});
 	}
 
 	anchors.parent('li').removeClass('active');

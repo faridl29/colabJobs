@@ -105,4 +105,20 @@ class User_model extends CI_Model {
 		$this->db->update('user', $update);
     }
 
+    public function change_password($id_user, $password) {
+        $hash = $this->hashSSHA($password);
+        $encrypted_password = $hash["encrypted"]; // encrypted password
+        $salt = $hash["salt"]; // salt
+ 
+        $data = array(
+            'password'  => $encrypted_password,
+            'salt'      => $salt
+        );
+
+        $this->db->where('id_user', $id_user);
+        $this->db->update('user', $data);
+
+        return true;
+    }
+
 }
