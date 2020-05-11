@@ -65,5 +65,13 @@ class Bussiness extends CI_Controller {
         
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     
+    }
+    
+    public function detail($id_jobs)
+	{
+        $result = $this->Bussiness_model->get_detail_bussiness($id_jobs);
+        $data['result'] = $result;
+        $this->load->view('superadmin/view_detail_bussiness', $data);
+    
 	}
 }

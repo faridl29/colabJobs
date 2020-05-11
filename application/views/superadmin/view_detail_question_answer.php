@@ -2,10 +2,10 @@
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
-				<li><a href="<?php echo base_url();?>user/home">
+				<li><a href="<?php echo base_url();?>superadmin/dashboard">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li><a href="<?php echo base_url();?>admin/QuestionAnswer">Q&A</a></li>
+				<li><a href="<?php echo base_url();?>superadmin/Question_Answer">Q&A</a></li>
 				<li class="active">detail</li>
 			</ol>
 		</div><!--/.row-->
@@ -31,9 +31,7 @@
 				
 					<div class="panel-body">
 					
-					<div class="article border-bottom">
-					</div>
-						
+			
 						<ul>
 							<?php if($comments->num_rows() > 0) foreach ($comments->result() as $row) : ;?>
                                 <div>

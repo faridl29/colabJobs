@@ -102,7 +102,7 @@
 
 	function detail(id_jobs)
   	{
-		window.location.href = "<?php echo base_url('admin/job_detail/detail/')?>"+id_jobs;
+		window.location.href = "<?php echo base_url('superadmin/Bussiness/detail/')?>"+id_jobs;
   	}
 
 	anchors.parent('li').removeClass('active');

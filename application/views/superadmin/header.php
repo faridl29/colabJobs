@@ -46,7 +46,7 @@
 	
 		<ul class="nav menu">
 			<li class="active"><a href="<?php echo base_url();?>superadmin/dashboard"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-			<li><a href="<?php echo base_url();?>superadmin/bussiness"><em class="fa fa-history">&nbsp;</em> Bussiness</a></li>
+			<li><a href="<?php echo base_url();?>superadmin/Bussiness"><em class="fa fa-history">&nbsp;</em> Bussiness</a></li>
 			<li><a href="<?php echo base_url();?>superadmin/Question_Answer"><em class="fa fa-comments">&nbsp;</em> Q&A</a></li>
 			<li><a href="<?php echo base_url();?>superadmin/login/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>

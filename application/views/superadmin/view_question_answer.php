@@ -66,47 +66,6 @@
 			</div>
 		</div>
 
-		<!-- Bootstrap modal -->
-		<div class="modal fade" id="modal_form" role="dialog">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title" id="modal_title">Ask Question</h4>
-						
-					</div>
-					<div class="modal-body form">
-                            
-                            <form action="#" id="form">
-                                <input type="hidden" value="" name="id"/> 
-                                <div class="form-body">
-                                    <div class="form-group">
-                                        <label class="control-label">Main Question</label>
-                                        <textarea name="main" class="form-control" placeholder="Write here..." style="width: 100%; font-size: 14px; height: 60px; border: 1px solid #dddddd; padding: 10px; resize:none"></textarea>
-                                        <span class="invalid-feedback"></span>
-                                    </div>
-                                    <div class="form-group">
-										<label class="control-label">Detail Question</label>
-										<textarea name="detail" class="form-control" placeholder="Write here..." style="width: 100%; font-size: 14px; height: 160px; border: 1px solid #dddddd; padding: 10px; resize:none"></textarea>
-										<span class="invalid-feedback"></span>
-									</div>
-                                          
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" id="btnSave" onclick="upload()" class="btn btn-primary upload">Save</button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                        </div>
-					
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
-		<!-- End Bootstrap modal -->
-
 		<div class="col-sm-12">
 			<p class="back-link">Lumino Theme by <a href="<?php echo base_url();?>assets/LuminoAdmin/https://www.medialoot.com">Medialoot</a></p>
 		</div>
