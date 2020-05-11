@@ -24,6 +24,11 @@
 
 				<?php foreach ($data->result() as $row) :?>
 					<div class="col-lg-12 col-md-12" >
+						<div class="panel-heading white-bg" style="border-bottom: 1px solid #e9ecf2;">
+                            Action
+                            <a onclick="delete_question(<?php echo $row->id_question;?>)"> <span class="pull-right panel-toggle panel-button-tab-left"><em class="fa fa-close"></em></span></a>
+							<a onclick="edit_question(<?php echo $row->id_question;?>)"> <span class="pull-right panel-toggle panel-button-tab-left"><em class="fa fa-edit"></em></span></a>
+                        </div>
 						<div class="single_jobs white-bg d-flex justify-content-between" style="display: -webkit-box!important;display: -ms-flexbox!important;display: flex!important">
 							<div class="jobs_left d-flex align-items-center" style="width:85%;display: -webkit-box!important;display: -ms-flexbox!important;display: flex!important">
 							
@@ -202,6 +207,27 @@
   	{
 		window.location.href = "<?php echo base_url('admin/detail_question_answer/detail/')?>"+id_question;
   	}
+
+	  function delete_question(id_question){
+
+		$.ajax({
+		url : "<?php echo base_url('admin/QuestionAnswer/delete_question')?>",
+		type: "POST",
+		data: {
+			"id_question": id_question
+		},
+		success: function(data)
+		{
+		window.location.reload();
+
+		},
+		error: function (jqXHR, textStatus, errorThrown)
+		{
+			alert('Gagal!');
+		}
+		});
+
+	}
 
 	anchors.parent('li').removeClass('active');
 

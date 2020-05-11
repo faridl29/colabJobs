@@ -15,6 +15,11 @@
 
 				<?php foreach ($data->result() as $row) :?>
 					<div class="col-lg-12 col-md-12" >
+						<div class="panel-heading white-bg" style="border-bottom: 1px solid #e9ecf2;">
+                            Action
+                            <a onclick="delete_bussiness(<?php echo $row->id_jobs;?>)"> <span class="pull-right panel-toggle panel-button-tab-left"><em class="fa fa-close"></em></span></a>
+							<a onclick="edit_bussiness(<?php echo $row->id_jobs;?>)"> <span class="pull-right panel-toggle panel-button-tab-left"><em class="fa fa-edit"></em></span></a>
+                        </div>
 						<div class="single_jobs white-bg d-flex justify-content-between" style="display: -webkit-box!important;display: -ms-flexbox!important;display: flex!important">
 							<div class="jobs_left d-flex align-items-center" style="width:85%;display: -webkit-box!important;display: -ms-flexbox!important;display: flex!important">
 								<div class="thumb" style="width:100px;height:100px">
@@ -135,6 +140,27 @@
   	{
 		window.location.href = "<?php echo base_url('admin/job_detail/detail/')?>"+id_jobs;
   	}
+
+	function delete_bussiness(id_bussiness){
+
+		$.ajax({
+			url : "<?php echo base_url('admin/history/delete_bussiness')?>",
+			type: "POST",
+			data: {
+				"id_bussiness": id_bussiness
+			},
+			success: function(data)
+			{
+			window.location.reload();
+			
+			},
+			error: function (jqXHR, textStatus, errorThrown)
+			{
+				alert('Gagal!');
+			}
+		});
+
+	}
 
 	anchors.parent('li').removeClass('active');
 

@@ -41,4 +41,10 @@ class History_model extends CI_Model{
         $this->db->update("apply_jobs", $data);
         return true;
     }
+
+    function delete_bussiness($id_jobs){
+        $this->db->where("id_jobs", $id_jobs);
+        $this->db->delete("jobs");
+        return true;
+    }
 } 

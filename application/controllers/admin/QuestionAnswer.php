@@ -98,5 +98,18 @@ class QuestionAnswer extends CI_Controller {
 		$this->form_validation->set_error_delimiters('', '');
         $this->form_validation->set_rules('main', 'Main Question', 'required');
 		$this->form_validation->set_rules('detail', 'Detail Question', 'required');
+    }
+    
+    public function delete_question()
+	{
+        $data = array(
+
+            'id_question'   => $this->input->post('id_question')
+        );
+
+        $this->Question_Answer_model->delete_question($this->input->post('id_question'));
+        
+        $this->output->set_content_type('application/json')->set_output(json_encode($data));
+    
 	}
 }

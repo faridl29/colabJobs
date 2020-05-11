@@ -63,4 +63,10 @@ class Question_Answer_model extends CI_Model{
         $this->db->insert("comments", $data);
         return true;
     }
+
+    function delete_question($id_question){
+        $this->db->where("id_question", $id_question);
+        $this->db->delete("question_answer");
+        return true;
+    }
 } 

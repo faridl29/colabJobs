@@ -65,4 +65,17 @@ class History extends CI_Controller {
     
        $this->History_model->accept($id, $data);
     }
+
+    public function delete_bussiness()
+	{
+        $data = array(
+
+            'id_bussiness'   => $this->input->post('id_bussiness')
+        );
+
+        $this->History_model->delete_bussiness($this->input->post('id_bussiness'));
+        
+        $this->output->set_content_type('application/json')->set_output(json_encode($data));
+    
+    }
 }
