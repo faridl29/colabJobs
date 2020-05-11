@@ -44,6 +44,12 @@ class Question_Answer_model extends CI_Model{
         return TRUE;
     }
 
+    function update($id, $update = array()){
+        $this->db->where("id_question", $id);
+        $this->db->update('question_answer', $update);
+        return TRUE;
+    }
+
     function get_question_by_id($id_question){
         $this->db->where('id_question', $id_question);
         $this->db->join('user', 'user.id_user = question_answer.id_user');
@@ -68,5 +74,11 @@ class Question_Answer_model extends CI_Model{
         $this->db->where("id_question", $id_question);
         $this->db->delete("question_answer");
         return true;
+    }
+
+    public function get_by_id($id) {
+		$this->db->where('id_question',$id);
+		$query = $this->db->get('question_answer');
+		return $query->row();
     }
 } 

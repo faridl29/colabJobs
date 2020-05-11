@@ -91,6 +91,39 @@ class QuestionAnswer extends CI_Controller {
             $this->output->set_content_type('application/json')->set_output(json_encode($data));
 			
 		}
+    }
+    
+    public function update(){
+
+		$data = array();
+		$data['status'] = TRUE;
+
+		$this->_validate();
+
+        if ($this->form_validation->run() == FALSE )
+        {
+            $errors = array(
+                'main' 			    => form_error('main'),
+				'detail' 			=> form_error('detail')
+			);
+            $data = array(
+                'status' 		=> FALSE,
+				'errors' 		=> $errors
+            );
+            $this->output->set_content_type('application/json')->set_output(json_encode($data));
+        }else{
+
+            $update = array(
+                'title'      		=> $this->input->post('main'),
+                'detail'			=> $this->input->post('detail')
+            );
+        
+            $this->Question_Answer_model->update($this->input->post('id'), $update);
+
+            $data['status'] = $update;
+            $this->output->set_content_type('application/json')->set_output(json_encode($data));
+			
+		}
 	}
 
 	private function _validate()
@@ -111,5 +144,11 @@ class QuestionAnswer extends CI_Controller {
         
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     
+    }
+    
+    public function edit($id)
+	{
+		header('Content-Type: application/json');
+		echo json_encode($this->Question_Answer_model->get_by_id($id));	
 	}
 }

@@ -14,7 +14,7 @@
 				<h1 class="page-header">All Questions</h1>
 			</div>
 			<div class="col-lg-6 col-md-12">
-				<h1 class="page-header text-right"><a href="#" onclick="add_question()" class="btn btn-primary" style="width:120px">Ask Question</a></h1>
+				<h1 class="page-header text-right"><a  onclick="add_question()" class="btn btn-primary" style="width:120px">Ask Question</a></h1>
 			</div>
 		</div><!--/.row-->
 		
@@ -135,27 +135,78 @@
 	<script src="<?php echo base_url();?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
 	<script type="text/javascript">
+
+	var save_label;
  
 	var url = window.location;
 	var anchors = $('.nav a');
 
+	function add_question(){
+		save_label = 'add';
+		$('#form')[0].reset(); // reset form on modals
+        $('.form-group').removeClass('has-error'); // clear error class
+        $('.help-block').empty(); // clear error string	
+        $('.invalid-feedback').empty();
+        $('#modal_form').modal('show'); // show bootstrap modal
+		$('.modal-title').text('Ask Question'); // title heading modal
+	}
+
+	function edit_question(id){
+		save_label = 'update';
+		$('#form')[0].reset(); // reset form on modals
+		$('.invalid-feedback').empty();
+		document.getElementById('form').reset();
+		$('.form-group').removeClass('has-error'); // clear error class
+		$('.help-block').empty(); // clear error string
+
+		$.ajax({
+			url : "<?php echo base_url('Admin/QuestionAnswer/edit/')?>"+id,
+			type: "GET",
+			dataType: "JSON",
+			success: function(data)
+			{
+				$('[name="id"]').val(data.id_question);
+				$('[name="main"]').val(data.title);
+				$('[name="detail"]').val(data.detail);
+				$('#modal_form').modal('show'); // show bootstrap modal when complete loaded
+				$('.modal-title').text('Edit Question'); // Set title to Bootstrap modal title
+
+			},
+			error: function (jqXHR, textStatus, errorThrown)
+			{
+				alert('Error get data from ajax');
+			}
+		});
+	}
+
 	function upload(){
+
+		$('#btnSave').text('saving...'); //change button text
+        $('#btnSave').attr('disabled',true); //set button disable 
+        var url, method;
+
+		if(save_label == 'add') {
+            url = "<?php echo base_url('admin/QuestionAnswer/post')?>";
+            method = 'diposting';
+        } else {
+			url = "<?php echo base_url('admin/QuestionAnswer/update')?>";
+            method = 'diupdate';
+        }
 	
 		$.ajax({
-			url : "<?php echo base_url('admin/QuestionAnswer/post')?>",
+			url : url,
 			type: "POST",
 			data: $('#form').serialize(),
             dataType: "json",
 			success: function(data)
-			{
-				$('#modal_form').modal('hide');
-				
+			{	
 				console.log(data);
-				if(data.status) //if success close modal and reload ajax table
+				if(data.status)
 				{
+					
 					Swal({
 						title: 'Success',
-						text: 'Pertanyaan berhasil diposting!',
+						text: 'Pertanyaan berhasil '+method,
 						type: 'success',
 						timer:3000,
 						showConfirmButton: false
@@ -175,10 +226,14 @@
 						}
 					});
 				}
+				$('#btnSave').text('save'); //change button text
+                $('#btnSave').attr('disabled',false); //set button enable 
 			},
 			error: function (jqXHR, textStatus, errorThrown)
 			{
-				alert('Error post data');
+				alert('Error posting / update question');
+				$('#btnSave').text('save'); //change button text
+                $('#btnSave').attr('disabled',false); //set button enable
 			}
 		});
 		
@@ -186,22 +241,15 @@
 		$('.help-block').empty(); // clear error string
 		$('.invalid-feedback').empty();
 
-		$('#form textarea').on('keyup', function(){
+		$('#form input').on('keyup', function(){
 			$(this).removeClass('is-valid is-invalid');            
 		});
-		$('#form select').on('change', function(){
-			$(this).removeClass('is-valid is-invalid');
-		});
+
+
+		$('#form')[0].reset(); 
 	
 	}
 
-	function add_question(){
-		$('#form')[0].reset(); // reset form on modals
-        $('.form-group').removeClass('has-error'); // clear error class
-        $('.help-block').empty(); // clear error string
-        $('.invalid-feedback').empty();
-        $('#modal_form').modal('show'); // show bootstrap modal
-	}
 
 	function detail(id_question)
   	{
