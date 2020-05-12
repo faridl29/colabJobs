@@ -43,8 +43,17 @@ class History_model extends CI_Model{
     }
 
     function delete_bussiness($id_jobs){
+
+		$this->db->where('id_jobs', $id_jobs);
+		$query = $this->db->get('jobs');
+		foreach($query->result_array() as $row){
+			$gambar = $row['photo'];	
+			unlink("images/".$gambar);
+        }
+        
         $this->db->where("id_jobs", $id_jobs);
         $this->db->delete("jobs");
+        
         return true;
     }
 } 

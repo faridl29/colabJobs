@@ -62,4 +62,10 @@ class Jobs_model extends CI_Model{
         $data = $this->db->insert('jobs', $insert);
         return true;
     }
+
+    function update($id_jobs, $update = array()){
+        $this->db->where('id_jobs', $id_jobs);
+        $data = $this->db->update('jobs', $update);
+        return true;
+    }
 } 

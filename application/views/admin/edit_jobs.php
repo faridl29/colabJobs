@@ -5,13 +5,14 @@
 				<li><a href="<?php echo base_url();?>user/home">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">Post Bussiness</li>
+				<li><a href="<?php echo base_url();?>admin/History/index">History</a></li>
+				<li class="active">Edit Bussiness</li>
 			</ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Post a New Colab Bussiness</h1>
+				<h1 class="page-header">Edit Bussiness</h1>
 			</div>
 		</div><!--/.row-->
 		
@@ -26,28 +27,29 @@
 					</div>
 					<div class="panel-body pad">
 					<form action="#" id="form" method="post" enctype="multipart/form-data">
+						<input type="hidden" value="<?php echo $data['id_jobs'];?>" name="id"/> 
 						<div class="form-group">	
 							<label>Judul</label>
 							<div class="row">
 								<div class="col-md-8">
-									<input class="form-control" style="height:40px" name="judul">
+									<input class="form-control" style="height:40px" name="judul" value="<?php echo $data['judul'];?>">
 									<span class="invalid-feedback"></span>
 								</div>
 								<div class="col-md-4">
-									<a onclick="upload()" type="submit" class="btn btn-primary float-right" style="width:100px;height:40px"> Upload </a>
+									<a onclick="update()" type="submit" class="btn btn-primary float-right" style="width:100px;height:40px"> Update </a>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<hr>
 							<div class="col-md-8">
-								<textarea name="deskripsi" class="textarea" placeholder="Description..." style="width: 100%; height: 700px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+								<textarea name="deskripsi" class="textarea" placeholder="Description..." style="width: 100%; height: 700px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"><?php echo $data['deskripsi'];?></textarea>
 								<span class="invalid-feedback"></span>
 							</div>
 							<div class="col-md-4">
 							<div class="form-group">
 								<label>Nama Perusahaan</label>
-								<input class="form-control" style="height:40px" name="nama_perusahaan">
+								<input class="form-control" style="height:40px" value="<?php echo $data['nama_perusahaan'];?>" name="nama_perusahaan">
 								<span class="invalid-feedback"></span>
 							</div>
 							<div class="form-group">
@@ -67,12 +69,12 @@
 							</div>
 							<div class="form-group">
 								<label>Domisili</label>
-								<input class="form-control" style="height:40px" name="domisili">
+								<input class="form-control" style="height:40px" name="domisili" value="<?php echo $data['domisili'];?>">
 								<span class="invalid-feedback"></span>
 							</div>
 							<div class="form-group">
 								<label>Contact Person</label> 
-								<input class="form-control" placeholder="email or phone" style="height:40px" name="contact">
+								<input class="form-control" placeholder="email or phone" style="height:40px" name="contact" value="<?php echo $data['contact'];?>">
 								<span class="invalid-feedback"></span>
 							</div>
 							<div class="form-group">
@@ -82,7 +84,7 @@
 							</div>
 							<div class="form-group">
 								<label>Dateline</label>
-        						<input type="text" name="dateline" class="form-control" id="datetimepicker2" placeholder="click here.." />
+        						<input type="text" name="dateline" class="form-control" id="datetimepicker2" placeholder="click here.." value="<?php echo $data['dateline'];?>"/>
 								<span class="invalid-feedback"></span>
 							</div>
 							</div>
@@ -121,10 +123,10 @@
 	var url = window.location;
 	var anchors = $('.nav a');
 	
-	function upload(){
+	function update(){
 	
 		$.ajax({
-			url : "<?php echo base_url('admin/post_job/post')?>",
+			url : "<?php echo base_url('admin/edit_jobs/update')?>",
 			type: "POST",
 			enctype: 'multipart/form-data',
 			processData: false,
@@ -135,11 +137,14 @@
 				console.log(data);
 				if(data.status) //if success close modal and reload ajax table
 				{
-				Swal({
-					title: 'Success',
-					text: 'Berhasil memposting data!',
-					type: 'success'
-				});
+					Swal({
+						title: 'Success',
+						text: 'Berhasil mengupdate data!',
+						type: 'success'
+					});
+
+					window.location.href = "<?php echo base_url('admin/History/index')?>";
+
 				}
 				else
 				{
@@ -155,7 +160,7 @@
 			},
 			error: function (jqXHR, textStatus, errorThrown)
 			{
-				alert('Error adding data');
+				alert('Error updating data');
 			}
 		});
 		

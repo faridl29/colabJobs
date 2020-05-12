@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Post_job extends CI_Controller {
+class Edit_jobs extends CI_Controller {
 
 	public function __construct()
 	{
@@ -16,13 +16,14 @@ class Post_job extends CI_Controller {
 		}
     }
 
-	public function index()
+    public function edit($id)
 	{
-		$data["notif"] = $this->Notification_model->get_notification_list($this->session->userdata("id_user"));
-		$this->load->view('admin/post_job', $data);
+        $data["notif"] = $this->Notification_model->get_notification_list($this->session->userdata("id_user"));
+        $data["data"] = $this->Jobs_model->get_detail_job($id);
+        $this->load->view("admin/edit_jobs",$data);
 	}
-	
-	public function post(){
+
+	public function update(){
 
 		$data = array();
 		$data['status'] = TRUE;
@@ -38,7 +39,7 @@ class Post_job extends CI_Controller {
                 'jenis_usaha'           => form_error('jenis_usaha'),
                 'domisili'              => form_error('domisili'),
 				'contact'              	=> form_error('contact'),
-				'dateline'              => form_error('dateline'),
+				'dateline'             	=> form_error('dateline'),
 				'images'           		=> form_error('images')
 			);
             $data = array(
@@ -72,7 +73,7 @@ class Post_job extends CI_Controller {
 
 				$gambar=$gbr['file_name'];
 				
-				$upload = array(
+				$update = array(
 					'id_user'			=> $this->session->userdata("id_user"),
 					'judul'      		=> $this->input->post('judul'),
 					'deskripsi'			=> $this->input->post('deskripsi'),
@@ -85,15 +86,15 @@ class Post_job extends CI_Controller {
 					'photo'				=> $gambar
 				);
 			
-				$this->Jobs_model->insert($upload);
+				$this->Jobs_model->update($this->input->post('id'), $update);
 
-				$data['status'] = $upload;
+				$data['status'] = TRUE;
 				$this->output->set_content_type('application/json')->set_output(json_encode($data));
 			}
 		}
-	}
+    }
 
-	private function _validate()
+    private function _validate()
 	{
 		$this->form_validation->set_error_delimiters('', '');
         $this->form_validation->set_rules('judul', 'Judul', 'required');
@@ -108,5 +109,5 @@ class Post_job extends CI_Controller {
 			$this->form_validation->set_rules('images', 'Document', 'required');
 		}
 	}
-
+    
 }

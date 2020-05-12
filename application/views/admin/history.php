@@ -162,6 +162,11 @@
 
 	}
 
+	function edit_bussiness(id_jobs)
+  	{
+		window.location.href = "<?php echo base_url('admin/edit_jobs/edit/')?>"+id_jobs;
+  	}
+
 	anchors.parent('li').removeClass('active');
 
 	anchors.filter(function() {
