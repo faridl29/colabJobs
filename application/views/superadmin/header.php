@@ -9,6 +9,7 @@
 	<link href="<?php echo base_url();?>assets/LuminoAdmin/css/datepicker3.css" rel="stylesheet">
 	<link href="<?php echo base_url();?>assets/LuminoAdmin/css/styles.css" rel="stylesheet">
 	<link href="<?php echo base_url();?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>assets/DataTables/datatables/css/dataTables.bootstrap.min.css" rel="stylesheet">
 	<link href="<?php echo base_url();?>assets/custom_style.css" rel="stylesheet">
 
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/jobboard2/css/style.css">
@@ -46,6 +47,7 @@
 	
 		<ul class="nav menu">
 			<li class="active"><a href="<?php echo base_url();?>superadmin/dashboard"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+			<li><a href="<?php echo base_url();?>superadmin/User"><em class="fa fa-user">&nbsp;</em> User</a></li>
 			<li><a href="<?php echo base_url();?>superadmin/Bussiness"><em class="fa fa-history">&nbsp;</em> Bussiness</a></li>
 			<li><a href="<?php echo base_url();?>superadmin/Question_Answer"><em class="fa fa-comments">&nbsp;</em> Q&A</a></li>
 			<li><a href="<?php echo base_url();?>superadmin/login/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>

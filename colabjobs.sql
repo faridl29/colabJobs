@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Bulan Mei 2020 pada 18.00
+-- Waktu pembuatan: 12 Bulan Mei 2020 pada 04.01
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.2.12
 
@@ -75,7 +75,9 @@ INSERT INTO `comments` (`id_comment`, `id_user`, `id_question`, `comment`, `date
 (6, '5eb56fd3c97a51.65094556', 1, 'Yaudah gini aja, cari lingkungan yang strategis, terus cari kios di daerah tersebut. Coba sewa kios nya, terus jualan disana', '2020-05-09 22:40:09'),
 (7, '5e04896678f7e8.57119955', 1, 'Oke deh nanti saya cari dulu, terima kasih sarannya', '2020-05-10 00:06:06'),
 (8, '5eb56fd3c97a51.65094556', 15, 'tes', '2020-05-10 01:59:56'),
-(9, '5eb56fd3c97a51.65094556', 1, 'Oke gan semoga sukses ya', '2020-05-10 21:10:47');
+(9, '5eb56fd3c97a51.65094556', 1, 'Oke gan semoga sukses ya', '2020-05-10 21:10:47'),
+(10, '5eb56fd3c97a51.65094556', 15, 'cek', '2020-05-12 08:49:40'),
+(11, '5eb56fd3c97a51.65094556', 15, 'aaa', '2020-05-12 08:49:49');
 
 -- --------------------------------------------------------
 
@@ -107,15 +109,15 @@ INSERT INTO `jobs` (`id_jobs`, `id_user`, `nama_perusahaan`, `jenis_usaha`, `jud
 (3, '5e04896678f7e8.57119955', 'PT Aplikita', 'Software & Web', 'Pembuatan Aplikasi Sosial Media', 'Jadi aplikasinya itu seperti ini, lalu jika dibuat seperti itu, akan menjadi seperti itu, begitu juga sebaliknya jika dibuat seperti ini maka akan jadi seperti ini. Bisa remote asal minimal paham git', 'Semarang', 'default_photo.png', '24234344234', '2020-05-05', '2020-05-27'),
 (4, '5e04896678f7e8.57119955', 'PT Satu Nusa', 'Lainnya', 'Bla bla bla', 'Jadi aplikasinya itu seperti ini, lalu jika dibuat seperti itu, akan menjadi seperti itu, begitu juga sebaliknya jika dibuat seperti ini maka akan jadi seperti ini. Bisa remote asal minimal paham git', 'Cimahi', 'default_photo.png', '42343423434', '2020-05-05', '2020-05-17'),
 (5, '5e04896678f7e8.57119955', 'Warung koe', 'Lainnya', 'Partner Usaha Jualan Bakso', 'Ini adalah usaha jualan bakso', 'Indramayu', 'default_photo.png', '2321323', '2020-05-05', '2020-05-13'),
-(6, '5e04896678f7e8.57119955', 'PT Satu Nusa', 'Lainnya', 'bla bla bla', 'awdwawdawdwwdwdwdwdwdkugaidawdhdwhduwhduiwhdiwhduwhduwhdawhdawhduiwhdwhuwdhuwhduwdhwdhwudhwihwd', 'Bekasi', 'default_photo.png', '233213', '2020-05-05', '2020-05-18'),
+(6, '5e04896678f7e8.57119955', 'PT Satu Nusa', 'Garments / Textile', 'ini judul', 'deskripsi<div><p><ul><li>sefef</li><li>sef</li><li>ef</li></ul></p></div>', 'Bekasi', 'maut3.jpg', '233213', '2020-05-12', '2020-05-31'),
 (7, '5e04896678f7e8.57119955', 'PT Sahamsaya', 'Marketing', 'Tanam Modal ', 'awakhdawdiwhuiwhduwhdukwhuwdwdwdwdwdwdwdwdwdwdwdwwd', 'Karawang', 'default_photo.png', 'adjhuawdh@gmail.com', '2020-05-05', '2020-05-14'),
-(8, '', 'Ini nama perusahaan', 'Engineering', 'Ini Judulnya', '<p>Bismillahirrahmanirrahim ini deskripsi</p><p><ul><li>feafef</li><li>efefef</li><li>efefef</li><li>efefef</li></ul></p>', 'cimahi', 'tandatanya.jpg', 'dadwdd', '0000-00-00', '0000-00-00'),
-(9, '5eb3ab405f0d36.94655000', 'Perusahaan apa aja', 'Administration', 'Judul nya ucok', '<p>Ini deskripsi ucok</p><p><ul><li>1</li><li>2</li><li>3</li></ul></p>', 'Zimbabwed', 'android3.png', 'ucok@gmail.com', '0000-00-00', '0000-00-00'),
-(11, '5eb3ab405f0d36.94655000', 'adwd', 'Design & Creative', 'wdwd', '<p>awdwd</p>', 'awdwd', 'mock_up6.jpg', 'awdw', '2020-05-08', '2012-05-20'),
-(12, '5eb56fd3c97a51.65094556', 'PT Siapa aja', 'Teaching & Education', 'Bisnis untuk siapa aja', '<p>Ini adalah bisnis pertamaku, buat yang gabung boleh aja, syarat :</p><p><ul><li>?awddw<br></li><li>awdwdw</li><li>awdwd</li><li>awdwd</li></ul></p>', 'Cimahi', 'nafsu5.jpg', 'siapa@gmail.com', '2020-05-08', '2012-05-20'),
-(17, '5eb56fd3c97a51.65094556', 'awdwdw', 'Administration', 'awddw', '<p>awdwdwd</p>', 'awdwd', 'maut31.jpg', 'awdwd', '2020-05-08', '2020-05-18'),
-(18, '5e04896678f7e8.57119955', 'awdwdw', 'Engineering', 'awdwawdwd', '<p>awdwdwd</p>', 'Papua', 'nikah5.jpg', '1232323', '2020-05-10', '2020-05-28'),
-(19, '5e04896678f7e8.57119955', 'PT Jaya Selalu', 'Administration', 'Postingan final', '<p>ini deskripsi</p><p><p><ul><li>wadwdwd</li><li>awdwdw</li><li>awdwdw</li></ul></p></p>', 'Cimahi', 'maut24.jpg', 'admin@gmail.com', '2020-05-10', '2020-05-21');
+(8, '', 'Ini nama perusahaan', 'Engineering', 'Ini Judulnya', '<p>Bismillahirrahmanirrahim ini deskripsi</p><p><ul><li>feafef</li><li>efefef</li><li>efefef</li><li>efefef</li></ul></p>', 'cimahi', 'default_photo.png', 'dadwdd', '0000-00-00', '0000-00-00'),
+(9, '5eb3ab405f0d36.94655000', 'Perusahaan apa aja', 'Administration', 'Judul nya ucok', '<p>Ini deskripsi ucok</p><p><ul><li>1</li><li>2</li><li>3</li></ul></p>', 'Zimbabwed', 'default_photo.png', 'ucok@gmail.com', '0000-00-00', '0000-00-00'),
+(11, '5eb3ab405f0d36.94655000', 'adwd', 'Design & Creative', 'wdwd', '<p>awdwd</p>', 'awdwd', 'default_photo.png', 'awdw', '2020-05-08', '2012-05-20'),
+(12, '5eb56fd3c97a51.65094556', 'PT Siapa aja', 'Design & Creative', 'Bisnis untuk siapa aja', '<p>Ini adalah bisnis pertamaku, buat yang gabung boleh aja, syarat :</p><p></p><ul><li>awddw<br></li><li>awdwdw</li><li>awdwd</li><li>awdwd</li></ul><p></p>', 'Cimahi', 'maut21.jpg', 'siapa@gmail.com', '2020-05-12', '2020-05-19'),
+(17, '5eb56fd3c97a51.65094556', 'awdwdw', 'Administration', 'awddw', '<p>awdwdwd</p>', 'awdwd', 'default_photo.png', 'awdwd', '2020-05-08', '2020-05-18'),
+(18, '5e04896678f7e8.57119955', 'awdwdw', 'Engineering', 'awdwawdwd', '<p>awdwdwd</p>', 'Papua', 'default_photo.png', '1232323', '2020-05-10', '2020-05-28'),
+(19, '5e04896678f7e8.57119955', 'PT Jaya Selalu', 'Administration', 'Postingan final', '<p>ini deskripsi</p><p><p><ul><li>wadwdwd</li><li>awdwdw</li><li>awdwdw</li></ul></p></p>', 'Cimahi', 'default_photo.png', 'admin@gmail.com', '2020-05-10', '2020-05-21');
 
 -- --------------------------------------------------------
 
@@ -161,9 +163,9 @@ INSERT INTO `question_answer` (`id_question`, `id_user`, `title`, `detail`, `dat
 (1, '5e04896678f7e8.57119955', 'Apakah dalam setiap membuka usaha membutuhkan modal?', 'Soalnya setiap saya membuka usaha, dengan tanpa modal atau dengan modal sedikit, usaha tersebut pasti gagal. Entah itu kesalahan saya dalam mengelola usaha atau yang lainnya', '2020-05-09 08:45:00'),
 (2, '5e04896678f7e8.57119955', 'Coba Bertanya', 'Ini isinya', '2020-05-09 10:42:51'),
 (3, '5e04896678f7e8.57119955', 'Bisnis dengan modal 10jt', 'Saya punya modal sekitar 10jt, kira-kira bisnis apa ya yang bagus buat kedepannya, kalo bisa yang cepat untung. Terima kasih', '2020-05-09 10:47:55'),
-(14, '5e04896678f7e8.57119955', 'awdwdwawdwd', 'awdwd', '2020-05-09 21:02:04'),
 (15, '5eb56fd3c97a51.65094556', 'Mau nyobain diskusi ah', 'Gabut soalnya, daripada diem aja kan', '2020-05-10 01:59:40'),
-(16, '5e04896678f7e8.57119955', 'Coba tanya', 'ini detail', '2020-05-10 21:09:43');
+(16, '5e04896678f7e8.57119955', 'Coba tanya', 'ini detailnya', '2020-05-10 21:09:43'),
+(18, '5e04896678f7e8.57119955', 'awdwd', 'awdwdawdw', '2020-05-12 06:19:19');
 
 -- --------------------------------------------------------
 
@@ -177,18 +179,20 @@ CREATE TABLE `user` (
   `email` varchar(50) NOT NULL,
   `telepon` varchar(13) NOT NULL,
   `foto` varchar(100) NOT NULL,
-  `password` varchar(80) NOT NULL
+  `password` varchar(80) NOT NULL,
+  `level` enum('user','superadmin') NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id_user`, `nama`, `email`, `telepon`, `foto`, `password`) VALUES
-('5e04896678f7e8.57119955', 'Miftah Faridl', 'admin@gmail.com', '089654711175', 'maut23.jpg', 'admin123'),
-('5eb3ab405f0d36.94655000', 'Coba user', 'cek@gmail.com', 'cek', 'default_profile.jpg', 'cek'),
-('5eb56fd3c97a51.65094556', 'Miftah Faridl', 'siapa@gmail.com', 'siapa', 'nikah4.jpg', 'siapa'),
-('5eb8234585a925.95653597', 'aaaa', 'a@gmail.com', 'aaaa', 'default_profile.jpg', 'aaaa');
+INSERT INTO `user` (`id_user`, `nama`, `email`, `telepon`, `foto`, `password`, `level`) VALUES
+('5e04896678f7e8.57119955', 'Miftah Faridl', 'admin@gmail.com', '089654711175', 'maut2.jpg', 'admin123', 'user'),
+('5eb3ab405f0d36.94655000', 'Coba user', 'cek@gmail.com', 'cek', 'default_profile.jpg', 'cek', 'user'),
+('5eb56fd3c97a51.65094556', 'Siapa aja', 'siapa@gmail.com', 'siapa', 'nikah.jpg', 'siapa', 'user'),
+('5eb8234585a925.95653597', 'aaaa', 'a@gmail.com', 'aaaa', 'default_profile.jpg', 'aaaa', 'user'),
+('5eba01c6329d30.50628994', 'Super Admin', 'superadmin@gmail.com', 'superadmin123', 'default_profile.jpg', 'superadmin123', 'superadmin');
 
 --
 -- Indexes for dumped tables
@@ -244,13 +248,13 @@ ALTER TABLE `apply_jobs`
 -- AUTO_INCREMENT untuk tabel `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id_jobs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_jobs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `notification`
@@ -262,7 +266,7 @@ ALTER TABLE `notification`
 -- AUTO_INCREMENT untuk tabel `question_answer`
 --
 ALTER TABLE `question_answer`
-  MODIFY `id_question` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_question` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
