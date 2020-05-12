@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Lumino - Dashboard</title>
+	<title>colabJobs - Dashboard</title>
 	<link href="<?php echo base_url();?>assets/LuminoAdmin/css/bootstrap.min.css" rel="stylesheet">
 	<link href="<?php echo base_url();?>assets/LuminoAdmin/css/font-awesome.min.css" rel="stylesheet">
 	<link href="<?php echo base_url();?>assets/LuminoAdmin/css/datepicker3.css" rel="stylesheet">
@@ -48,7 +48,7 @@
 		<ul class="nav menu">
 			<li class="active"><a href="<?php echo base_url();?>superadmin/dashboard"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 			<li><a href="<?php echo base_url();?>superadmin/User"><em class="fa fa-user">&nbsp;</em> User</a></li>
-			<li><a href="<?php echo base_url();?>superadmin/Bussiness"><em class="fa fa-history">&nbsp;</em> Bussiness</a></li>
+			<li><a href="<?php echo base_url();?>superadmin/Bussiness"><em class="fa fa-briefcase">&nbsp;</em> Bussiness</a></li>
 			<li><a href="<?php echo base_url();?>superadmin/Question_Answer"><em class="fa fa-comments">&nbsp;</em> Q&A</a></li>
 			<li><a href="<?php echo base_url();?>superadmin/login/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
