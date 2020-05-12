@@ -94,7 +94,17 @@
 
     function delete_question(id_question){
 
-        $.ajax({
+		Swal({
+          title: 'Anda yakin?',
+          text: "Akan menghapus pertanyaan ini!",
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Hapus pertanyaan!'
+      }).then((result) => {
+		
+		$.ajax({
         url : "<?php echo base_url('superadmin/Question_Answer/delete_question')?>",
         type: "POST",
         data: {
@@ -110,6 +120,8 @@
             alert('Gagal!');
         }
         });
+          
+      });
 
     }
 

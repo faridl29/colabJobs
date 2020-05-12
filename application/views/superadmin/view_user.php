@@ -75,16 +75,16 @@
         
         $.fn.dataTableExt.oApi.fnPagingInfo = function(oSettings)
     	{
-        return {
-          "iStart": oSettings._iDisplayStart,
-          "iEnd": oSettings.fnDisplayEnd(),
-          "iLength": oSettings._iDisplayLength,
-          "iTotal": oSettings.fnRecordsTotal(),
-          "iFilteredTotal": oSettings.fnRecordsDisplay(),
-          "iPage": Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength),
-          "iTotalPages": Math.ceil(oSettings.fnRecordsDisplay() / oSettings._iDisplayLength)
-        };
-		  };
+            return {
+                "iStart": oSettings._iDisplayStart,
+                "iEnd": oSettings.fnDisplayEnd(),
+                "iLength": oSettings._iDisplayLength,
+                "iTotal": oSettings.fnRecordsTotal(),
+                "iFilteredTotal": oSettings.fnRecordsDisplay(),
+                "iPage": Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength),
+                "iTotalPages": Math.ceil(oSettings.fnRecordsDisplay() / oSettings._iDisplayLength)
+            };
+		};
         
       table = $("#user").DataTable({
         initComplete: function() {
@@ -132,9 +132,8 @@
         table.ajax.reload(null, false);
     }
 
-    function hapus_user(id)
+    function hapus_user(email)
     {
-        alert(id);
         Swal({
           title: 'Anda yakin?',
           text: "Akan menghapus user ini!",
@@ -146,7 +145,7 @@
       }).then((result) => {
           if(result.value) {
               $.ajax({
-                  url : "<?php echo base_url('superadmin/User/delete/')?>"+id,
+                  url : "<?php echo base_url('superadmin/User/delete/')?>"+email,
                   type: "POST",
                   success: function(data)
                   {
@@ -155,7 +154,7 @@
                         title: 'Success',
                         text: 'User berhasil dihapus',
                         type: 'success'
-                    });
+                      });
                   },
                   error: function (jqXHR, textStatus, errorThrown)
                   {

@@ -81,6 +81,17 @@
 
     function delete_bussiness(id_bussiness){
 
+		Swal({
+          title: 'Anda yakin?',
+          text: "Akan menghapus bisnis ini!",
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Hapus bisnis!'
+      }).then((result) => {
+		
+		
         $.ajax({
             url : "<?php echo base_url('superadmin/Bussiness/delete_bussiness')?>",
             type: "POST",
@@ -97,6 +108,8 @@
                 alert('Gagal!');
             }
         });
+          
+      });
         
     }
 
