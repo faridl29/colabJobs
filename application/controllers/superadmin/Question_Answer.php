@@ -17,7 +17,7 @@ class Question_Answer extends CI_Controller {
 	public function index()
 	{
        //konfigurasi pagination
-       $config['base_url'] = site_url('admin/History/index'); //site url
+       $config['base_url'] = site_url('superadmin/Question_Answer/index'); //site url
        $config['total_rows'] = $this->db->count_all("question_answer"); //total row
        $config['per_page'] = 6;  //show record per halaman
        $config["uri_segment"] = 4;  // uri parameter

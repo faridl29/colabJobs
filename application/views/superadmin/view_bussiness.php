@@ -91,7 +91,6 @@
           confirmButtonText: 'Hapus bisnis!'
       }).then((result) => {
 		
-		
         $.ajax({
             url : "<?php echo base_url('superadmin/Bussiness/delete_bussiness')?>",
             type: "POST",
